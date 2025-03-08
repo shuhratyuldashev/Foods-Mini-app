@@ -13,6 +13,10 @@ interface TranslaterFormProps {
   translated: string;
 }
 
+type TranslateResponse = {
+  result?: string;
+};
+
 const TranslaterForm = ({ current, translated }: TranslaterFormProps) => {
   const [result, setResult] = useState<string>("Перевод"); 
   const form = useForm<TranslateFormValues>({
@@ -23,13 +27,17 @@ const TranslaterForm = ({ current, translated }: TranslaterFormProps) => {
     },
   });
 
-  const handleSubmit = async (data: { text: string }, current: string, translated: string) => {
-    const res = await onSubmitTransLate(data, current, translated);
+  
+  const handleSubmit = async (
+    data: { text: string },
+    current: string,
+    translated: string
+  ) => {
+    const res: TranslateResponse | null = await onSubmitTransLate(data, current, translated);
     if (res?.result) {
-      return setResult(res?.result); 
+      setResult(res.result);
     }
   };
-
   return (
     <Form {...form}>
       <form
