@@ -13,9 +13,6 @@ interface TranslaterFormProps {
   translated: string;
 }
 
-type TranslateResponse = {
-  result?: string;
-};
 
 const TranslaterForm = ({ current, translated }: TranslaterFormProps) => {
   const [result, setResult] = useState<string>("Перевод"); 
@@ -33,7 +30,7 @@ const TranslaterForm = ({ current, translated }: TranslaterFormProps) => {
     current: string,
     translated: string
   ) => {
-    const res: TranslateResponse | null = await onSubmitTransLate(data, current, translated);
+    const res: any = await onSubmitTransLate(data, current, translated);
     if (res?.result) {
       setResult(res.result);
     }
