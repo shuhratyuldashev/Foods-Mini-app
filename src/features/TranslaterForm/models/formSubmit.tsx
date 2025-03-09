@@ -2,8 +2,7 @@ import { toast } from "sonner";
 import { TranslateFormValues } from "./formSchema";
 import axios from "axios";
 
-// const API_URL = process.env.VITE_API_URL
-const API_URL = 'http://localhost:3000/translate';
+const API_URL = process.env.VITE_API_URL
 
 const translateText = async (text: string, from: string, to: string) => {
   try {
