@@ -2,7 +2,8 @@ import { toast } from "sonner";
 import { TranslateFormValues } from "./formSchema";
 import axios from "axios";
 
-const API_URL = process.env.VITE_API_URL
+// const API_URL = process.env.VITE_API_URL
+const API_URL = 'http://localhost:3000/translate';
 
 const translateText = async (text: string, from: string, to: string) => {
   try {
@@ -15,7 +16,7 @@ const translateText = async (text: string, from: string, to: string) => {
     return response.data;
   } catch (error) {
     toast.custom(() => (
-      <div className="bg-rose-600 text-white p-4 rounded-md shadow-md">
+      <div className="bg-rose-600 text-white p-4 rounded-md min-w-[400px] shadow-md">
         <h2 className="text-lg font-bold">Ошибка перевода</h2>
         <p>Ошибка перевода, попробуйте позже</p>
       </div>
@@ -42,7 +43,7 @@ export const onSubmitTransLate = async (
 
   if (translatedText) {
     toast.custom(() => (
-      <div className="bg-green-600 text-white p-4 rounded-md shadow-md">
+      <div className="bg-green-600 text-white p-4 rounded-md min-w-[400px] shadow-md">
         <h3 className="font-bold">Перевод Выполнен</h3>
       </div>
     ));;
