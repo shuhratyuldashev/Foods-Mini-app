@@ -1,5 +1,10 @@
 import { MoveRight } from "lucide-react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../shared/ui/tabs";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../../../shared/ui/tabs";
 import TranslaterForm from "../../../features/TranslaterForm";
 
 const RuToEngWidget = () => {

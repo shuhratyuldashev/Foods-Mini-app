@@ -5,7 +5,7 @@ const AppRouter = () => {
   return (
     <main className="flex flex-col items-center justify-center">
       <HomePage />
-      <Toaster position="top-center" richColors/>
+      <Toaster position="top-center" richColors />
     </main>
   );
 };

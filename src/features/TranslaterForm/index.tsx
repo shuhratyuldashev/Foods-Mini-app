@@ -14,10 +14,9 @@ interface TranslaterFormProps {
   translated: string;
 }
 
-
 const TranslaterForm = ({ current, translated }: TranslaterFormProps) => {
-  const [result, setResult] = useState<string>("Перевод"); 
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [result, setResult] = useState<string>("Перевод");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const form = useForm<TranslateFormValues>({
     resolver: zodResolver(translateSchema),
     mode: "onChange",
@@ -26,20 +25,18 @@ const TranslaterForm = ({ current, translated }: TranslaterFormProps) => {
     },
   });
 
-  
   const handleSubmit = async (
     data: { text: string },
     current: string,
-    translated: string
+    translated: string,
   ) => {
-    setIsLoading(true)
+    setIsLoading(true);
     const res: any = await onSubmitTranslate(data, current, translated);
-
 
     if (res?.result.translatedText) {
       setResult(res.result.translatedText);
     }
-    setIsLoading(false)
+    setIsLoading(false);
   };
 
   if (isLoading) {
