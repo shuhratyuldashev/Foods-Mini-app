@@ -4,6 +4,24 @@ import axios from "axios";
 
 const API_URL = process.env.VITE_API_URL
 
+const SuccesToast = () => {
+  return (
+    <div className="bg-green-600 text-white p-4 rounded-md min-w-[370px] shadow-md">
+      <h3 className="font-bold">Перевод Выполнен</h3>
+      <p>Перевод вашего текста успешно выполнен!</p>
+    </div>
+)}
+
+const ErrorToast = ({ err }: { err: string}) => {
+  return (
+    <div className="bg-rose-600 text-white p-4 rounded-md min-w-[370px] shadow-md">
+      <h2 className="text-lg font-bold">Ошибка!</h2>
+      <p>{err}</p>
+    </div>
+)}
+
+
+
 const translateText = async (text: string, from: string, to: string) => {
   try {
     const response = await axios.post(`${API_URL}`, {
@@ -14,38 +32,24 @@ const translateText = async (text: string, from: string, to: string) => {
     console.log(response)
     return response.data;
   } catch (error) {
-    toast.custom(() => (
-      <div className="bg-rose-600 text-white p-4 rounded-md min-w-[400px] shadow-md">
-        <h2 className="text-lg font-bold">Ошибка перевода</h2>
-        <p>Ошибка перевода, попробуйте позже</p>
-      </div>
-    ));
+    toast.custom(() => <ErrorToast err="Ошибка перевода, попробуйте позже"/>);
     return null;
   }
 };
 
-export const onSubmitTransLate = async (
+export const onSubmitTranslate = async (
   data: TranslateFormValues,
   from: string,
   to: string
 ) => {
   if (!data.text.trim()) {
-    return toast.custom(() => (
-      <div className="bg-rose-600 text-white p-4 rounded-md shadow-md min-w-[400px]">
-        <h2 className="text-lg font-bold">Ошибка</h2>
-        <p>Поле не может быть пустым</p>
-      </div>
-    ));
+    return toast.custom(() => <ErrorToast err="Поле не может быть пустым"/>);
   }
 
   const translatedText = await translateText(data.text, from, to);
 
   if (translatedText) {
-    toast.custom(() => (
-      <div className="bg-green-600 text-white p-4 rounded-md min-w-[400px] shadow-md">
-        <h3 className="font-bold">Перевод Выполнен</h3>
-      </div>
-    ));;
+    toast.custom(() => <SuccesToast />);
     console.log("Переведённый текст:", translatedText);
     return { result: translatedText };
   }

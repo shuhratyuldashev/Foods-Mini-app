@@ -3,10 +3,11 @@ import { Form, FormField, FormItem, FormMessage } from "../../shared/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Textarea } from "../../shared/ui/textarea";
 import { Button } from "../../shared/ui/button";
-import { MoveRight } from "lucide-react";
-import { translateSchema, onSubmitTransLate } from "./models";
+import { Loader, MoveRight } from "lucide-react";
+import { translateSchema, onSubmitTranslate } from "./models";
 import { TranslateFormValues } from "./models/formSchema";
 import { useState } from "react";
+import { toast } from "sonner";
 
 interface TranslaterFormProps {
   current: string;
@@ -16,6 +17,7 @@ interface TranslaterFormProps {
 
 const TranslaterForm = ({ current, translated }: TranslaterFormProps) => {
   const [result, setResult] = useState<string>("Перевод"); 
+  const [isLoading, setIsLoading] = useState<boolean>(false)
   const form = useForm<TranslateFormValues>({
     resolver: zodResolver(translateSchema),
     mode: "onChange",
@@ -30,11 +32,29 @@ const TranslaterForm = ({ current, translated }: TranslaterFormProps) => {
     current: string,
     translated: string
   ) => {
-    const res: any = await onSubmitTransLate(data, current, translated);
-    if (res?.result) {
-      setResult(res.result);
+    setIsLoading(true)
+    const res: any = await onSubmitTranslate(data, current, translated);
+
+
+    if (res?.result.translatedText) {
+      setResult(res.result.translatedText);
     }
+    setIsLoading(false)
   };
+
+  if (isLoading) {
+    toast.custom(() => (
+      <div className="p-4 text-slate-600 rounded-md min-w-[370px] shadow-lg">
+        <h2 className="font-bold flex gap-2">
+          <span className="animate-spin">
+            <Loader />
+          </span>
+          Loading...
+        </h2>
+      </div>
+    ));
+  }
+
   return (
     <Form {...form}>
       <form

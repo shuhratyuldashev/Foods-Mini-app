@@ -9,15 +9,15 @@ const RuToEngWidget = () => {
         <TabsTrigger value="ru">
           Ru <MoveRight /> Eng
         </TabsTrigger>
-        <TabsTrigger value="eng">
+        <TabsTrigger value="en">
           Eng <MoveRight /> Ru
         </TabsTrigger>
       </TabsList>
       <TabsContent value="ru">
-        <TranslaterForm current="ru" translated="eng" />
+        <TranslaterForm current="ru" translated="en" />
       </TabsContent>
-      <TabsContent value="eng">
-        <TranslaterForm current="eng" translated="ru" />
+      <TabsContent value="en">
+        <TranslaterForm current="en" translated="ru" />
       </TabsContent>
     </Tabs>
   );

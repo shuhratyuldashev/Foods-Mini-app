@@ -1,4 +1,4 @@
-import { onSubmitTransLate } from "./formSubmit.tsx";
+import { onSubmitTranslate } from "./formSubmit.tsx";
 import { translateSchema } from "./formSchema";
 
-export { translateSchema, onSubmitTransLate };
+export { translateSchema, onSubmitTranslate };

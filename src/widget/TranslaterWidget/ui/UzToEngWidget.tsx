@@ -14,15 +14,15 @@ const UzToEngWidget = () => {
         <TabsTrigger value="uz">
           Uz <MoveRight /> Eng
         </TabsTrigger>
-        <TabsTrigger value="eng">
+        <TabsTrigger value="en">
           Eng <MoveRight /> Uz
         </TabsTrigger>
       </TabsList>
       <TabsContent value="uz">
-        <TranslaterForm current="uz" translated="eng" />
+        <TranslaterForm current="uz" translated="en" />
       </TabsContent>
-      <TabsContent value="eng">
-        <TranslaterForm current="eng" translated="uz" />
+      <TabsContent value="en">
+        <TranslaterForm current="en" translated="uz" />
       </TabsContent>
     </Tabs>
   );
