@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "../../shared/ui/input-otp";
 import HeaderEmailVerificationPage from "./ui/header-email-verification-page";
 
@@ -30,9 +31,11 @@ const EmailVerificationPage = () => {
             09.00
         </p>
 
+        <Link to="/products">
         <button className="w-full bg-primary text-white rounded-full font-semibold p-4 transition hover:scale-75">
         Continue
       </button>
+        </Link>
       </form>
     </main>
   );
