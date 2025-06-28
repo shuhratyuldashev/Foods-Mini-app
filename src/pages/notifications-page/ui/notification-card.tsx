@@ -1,5 +1,3 @@
-import React from "react";
-
 const NotificationCard = () => (
   <div className="flex">
     <div className="flex items-center justify-center rounded-full p-2 bg-gray-100 text-green-600">

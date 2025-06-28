@@ -1,7 +1,6 @@
 import product_cover from "../../shared/assets/images/img-product-card.png";
 import React from "react";
 import HeaderProductPage from "./ui/header-product-page";
-import { Separator } from "../../shared/ui/separator";
 import InfoSectionProductPage from "./ui/info-section-product-page";
 import ProductsList from "../products-page/ui/products-list";
 

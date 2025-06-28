@@ -1,4 +1,3 @@
-import React from "react";
 
 const TypingArea = () => (
   <div className="fixed flex gap-4 bottom-0 p-2">
