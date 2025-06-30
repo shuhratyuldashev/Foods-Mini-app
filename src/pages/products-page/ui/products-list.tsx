@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import img_product_card from "../../../shared/assets/images/img-product-card.png";
 
 const ProductsList = ({ count }: { count: number }) => {
   return (
     <div className="grid grid-cols-2 gap-4 mt-4">
       {Array.from({ length: count }).map((_, i) => (
-        <div key={i} className="shadow-xs bg-white rounded-md p-2">
+        <Link to="/products/1" key={i} className="shadow-xs bg-white rounded-md p-2">
           <div className="w-full object-cover relative">
             <img
               className="rounded w-full h-max-[120px]"
@@ -68,7 +69,7 @@ const ProductsList = ({ count }: { count: number }) => {
             </div>
             <p className="font-black text-primary">$ 17,230</p>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

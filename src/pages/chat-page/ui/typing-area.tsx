@@ -1,4 +1,3 @@
-
 const TypingArea = () => (
   <div className="fixed flex gap-4 bottom-0 p-2">
     <div className="flex gap-2 border rounded-md focus-within:ring-3 bg-white focus-within:ring-gray-300 transition">

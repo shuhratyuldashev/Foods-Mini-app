@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ForgotPasswordPage = () => {
   return (
     <main className="p-4">
@@ -16,9 +18,11 @@ const ForgotPasswordPage = () => {
           />
         </div>
 
+        <Link to="/verify-email">
         <button className="w-full mt-28 bg-primary text-white rounded-full font-semibold p-4 transition hover:scale-75">
           Continue
         </button>
+        </Link>
       </form>
     </main>
   );
