@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
-const HeaderHelpCenter = () =>  (
-    <header className="flex items-center mt-5">
+const HeaderHelpCenter = () => (
+  <header className="flex items-center mt-5">
     <Link to="/profile">
       <button className="rounded-full p-2 border flex justify-center items-center">
         <svg
@@ -20,8 +20,10 @@ const HeaderHelpCenter = () =>  (
         </svg>
       </button>
     </Link>
-    <p className="font-semibold text-lg mx-auto translate-x-[-20%]">Help Center</p>
+    <p className="font-semibold text-lg mx-auto translate-x-[-20%]">
+      Help Center
+    </p>
   </header>
-)
+);
 
-export default HeaderHelpCenter
+export default HeaderHelpCenter;

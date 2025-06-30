@@ -41,7 +41,7 @@ const DeleteCardModal = ({ handleClose }: { handleClose: () => void }) => (
           No, I won't
         </button>
         <button className="p-3 w-1/2 flex items-center gap-2 justify-center rounded-full border">
-         Yes, Of course
+          Yes, Of course
         </button>
       </div>
     </div>

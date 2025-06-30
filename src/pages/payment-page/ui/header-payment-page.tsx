@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const HeaderPaymentPage = () => (
-    <header className="flex items-center mt-5">
+  <header className="flex items-center mt-5">
     <Link to="/cart">
       <button className="rounded-full p-2 border flex justify-center items-center">
         <svg
@@ -20,10 +20,8 @@ const HeaderPaymentPage = () => (
         </svg>
       </button>
     </Link>
-    <p className="font-semibold text-lg mx-auto translate-x-[-15%]">
-      Payment
-    </p>
+    <p className="font-semibold text-lg mx-auto translate-x-[-15%]">Payment</p>
   </header>
-)
+);
 
-export default HeaderPaymentPage
+export default HeaderPaymentPage;

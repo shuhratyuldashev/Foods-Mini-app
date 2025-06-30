@@ -1,10 +1,9 @@
-
 const AddNewCardForm = () => {
   return (
     <form className="mt-10 w-full flex flex-col gap-4">
       <div>
         <label className="text-sm font-semibold" htmlFor="name_card">
-            Name on new Card
+          Name on new Card
         </label>
         <input
           id="name_card"
@@ -91,7 +90,7 @@ const AddNewCardForm = () => {
         Save Card
       </button>
     </form>
-  )
-}
+  );
+};
 
-export default AddNewCardForm
+export default AddNewCardForm;

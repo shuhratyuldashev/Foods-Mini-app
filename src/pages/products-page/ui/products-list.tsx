@@ -5,7 +5,11 @@ const ProductsList = ({ count }: { count: number }) => {
   return (
     <div className="grid grid-cols-2 gap-4 mt-4">
       {Array.from({ length: count }).map((_, i) => (
-        <Link to="/products/1" key={i} className="shadow-xs bg-white rounded-md p-2">
+        <Link
+          to="/products/1"
+          key={i}
+          className="shadow-xs bg-white rounded-md p-2"
+        >
           <div className="w-full object-cover relative">
             <img
               className="rounded w-full h-max-[120px]"

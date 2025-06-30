@@ -19,6 +19,7 @@ import ExtraCardPage from "../../pages/extra-card-page";
 import AddNewCardPage from "../../pages/add-new-card-page";
 import ResetPasswordPage from "../../pages/reset-password-page";
 import PaymentPage from "../../pages/payment-page";
+import OrderPage from "../../pages/order-page";
 
 const AppRouter = () => {
   return (
@@ -32,6 +33,7 @@ const AppRouter = () => {
         <Route path="/products/:id" element={<ProductPage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/payment" element={<PaymentPage />} />
+        <Route path="/order" element={<OrderPage />} />
         <Route path="/messages" element={<MessagesPage />} />
         <Route path="/messages/:id" element={<ChatPage />} />
         <Route path="/profile" element={<ProfilePage />} />

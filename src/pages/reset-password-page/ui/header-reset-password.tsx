@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const HeaderResetPassword = () => (
-     <header className="flex items-center mt-5">
+  <header className="flex items-center mt-5">
     <Link to="/verify-email">
       <button className="rounded-full p-2 border flex justify-center items-center">
         <svg
@@ -24,6 +24,6 @@ const HeaderResetPassword = () => (
       Reset password
     </p>
   </header>
-)
+);
 
-export default HeaderResetPassword
+export default HeaderResetPassword;
