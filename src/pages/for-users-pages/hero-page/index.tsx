@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { pages } from "./constants/pages.ts";
+import { pages } from "./constants/pages";
 
 const HeroPage = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
