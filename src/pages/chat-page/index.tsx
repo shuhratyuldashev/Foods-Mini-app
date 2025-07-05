@@ -1,4 +1,4 @@
-import UserMessage from "../../entities/user-message";
+import UserMessage from "@/entities/user-message";
 import HeaderChat from "./ui/header-chat";
 import TypingArea from "./ui/typing-area";
 

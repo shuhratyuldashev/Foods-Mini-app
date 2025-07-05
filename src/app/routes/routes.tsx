@@ -1,25 +1,40 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ProductsPage from "../../pages/products-page";
-import SignInPage from "../../pages/sign-in-page";
-import SignUpPage from "../../pages/sign-up-page";
-import HeroPage from "../../pages/hero-page";
-import CartPage from "../../pages/cart-page";
-import MessagesPage from "../../pages/messages-page";
-import ProfilePage from "../../pages/profile-page";
-import ForgotPasswordPage from "../../pages/forgot-password-page";
-import NotificationsPage from "../../pages/notifications-page";
-import SearchPage from "../../pages/search-page";
-import ChatPage from "../../pages/chat-page";
-import ProductPage from "../../pages/product-page";
-import EmailVerificationPage from "../../pages/email-verification-page";
-import PersonalDatePage from "../../pages/personal-date";
-import SettingsPage from "../../pages/settings-page";
-import HelpCenterPage from "../../pages/help-center-page";
-import ExtraCardPage from "../../pages/extra-card-page";
-import AddNewCardPage from "../../pages/add-new-card-page";
-import ResetPasswordPage from "../../pages/reset-password-page";
-import PaymentPage from "../../pages/payment-page";
-import OrderPage from "../../pages/order-page";
+import ProductsPage from "@/pages/for-users-pages/products-page";
+import SignInPage from "@/pages/sign-in-page";
+import SignUpPage from "@/pages/sign-up-page";
+import HeroPage from "@/pages/for-users-pages/hero-page";
+import CartPage from "@/pages/for-users-pages/cart-page";
+import MessagesPage from "@/pages/messages-page";
+import ProfilePage from "@/pages/for-users-pages/profile-page";
+import ForgotPasswordPage from "@/pages/for-users-pages/forgot-password-page";
+import NotificationsPage from "@/pages/notifications-page";
+import SearchPage from "@/pages/for-users-pages/search-page";
+import ChatPage from "@/pages/chat-page";
+import ProductPage from "@/pages/for-users-pages/product-page";
+import EmailVerificationPage from "@/pages/for-users-pages/email-verification-page";
+import PersonalDatePage from "@/pages/for-users-pages/personal-date";
+import SettingsPage from "@/pages/settings-page";
+import HelpCenterPage from "@/pages/for-users-pages/help-center-page";
+import ExtraCardPage from "@/pages/for-users-pages/extra-card-page";
+import AddNewCardPage from "@/pages/for-users-pages/add-new-card-page";
+import ResetPasswordPage from "@/pages/for-users-pages/reset-password-page";
+import PaymentPage from "@/pages/for-users-pages/payment-page";
+import OrderPage from "@/pages/for-users-pages/order-page";
+import MyOrdersPage from "@/pages/for-staff-pages/my-orders-page";
+import StaffMessagesPage from "@/pages/for-staff-pages/messages-page";
+import StaffProfilePage from "@/pages/for-staff-pages/profile-page";
+import MyOrderPage from "@/pages/for-staff-pages/my-order-page";
+import MyOrdersSortedPage from "@/pages/for-staff-pages/my-orders-sorted-page";
+import OrderPickUpPage from "@/pages/for-users-pages/order--pick-up-page ";
+import ChoosePlacePage from "@/pages/for-users-pages/choose-place-page";
+import DashboardPage from "@/pages/for-admins-page/dashboard-page";
+import IncomesPage from "@/pages/for-admins-page/incomes-page";
+import SalesPage from "@/pages/for-admins-page/sales-page";
+import FoodsListPage from "@/pages/for-admins-page/foods-list-page";
+import CustomersListPage from "@/pages/for-admins-page/customers-list-page";
+import UserPage from "@/pages/for-admins-page/user-page";
+import FoodPage from "@/pages/for-admins-page/food-page";
+import EmployersListPage from "@/pages/for-admins-page/employes-list-page";
 
 const AppRouter = () => {
   return (
@@ -34,6 +49,8 @@ const AppRouter = () => {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/order" element={<OrderPage />} />
+        <Route path="/order/pick-up" element={<OrderPickUpPage />} />
+        <Route path="/choose-place" element={<ChoosePlacePage />} />
         <Route path="/messages" element={<MessagesPage />} />
         <Route path="/messages/:id" element={<ChatPage />} />
         <Route path="/profile" element={<ProfilePage />} />
@@ -49,6 +66,21 @@ const AppRouter = () => {
         />
         <Route path="/notifications" element={<NotificationsPage />} />
         <Route path="/search" element={<SearchPage />} />
+
+        <Route path="/staff/my-orders" element={<MyOrdersPage />} />
+        <Route path="/staff/my-order/:id" element={<MyOrderPage />} />
+        <Route path="/staff/my-orders/:type" element={<MyOrdersSortedPage />} />
+        <Route path="/staff/messages" element={<StaffMessagesPage />} />
+        <Route path="/staff/profile" element={<StaffProfilePage />} />
+
+        <Route path="/admin/dashboard" element={<DashboardPage />} />
+        <Route path="/admin/income" element={<IncomesPage />} />
+        <Route path="/admin/sales" element={<SalesPage />} />
+        <Route path="/admin/foods" element={<FoodsListPage />} />
+        <Route path="/admin/customers" element={<CustomersListPage />} />
+        <Route path="/admin/employes" element={<EmployersListPage />} />
+        <Route path="user/:id" element={<UserPage />} />
+        <Route path="foods/:id" element={<FoodPage />} />
       </Routes>
     </BrowserRouter>
   );

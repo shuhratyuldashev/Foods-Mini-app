@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const HeaderNotificationPage = () => (
   <header className="flex items-center mt-5">
-    <Link to="/products">
+    <Link to="/">
       <button className="rounded-full p-2 border flex justify-center items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
