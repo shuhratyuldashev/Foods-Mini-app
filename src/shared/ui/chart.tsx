@@ -142,7 +142,7 @@ function ChartTooltipContent({
     if (hideLabel || !payload?.length) return null;
 
     const [item] = payload;
-    const key = `${labelKey || item?.dataKey || item?.name || "value"}`;
+    const key = `${labelKey || item || item || "value"}`;
     const itemConfig = getPayloadConfigFromPayload(config, item, key);
     const value =
       !labelKey && typeof label === "string"
