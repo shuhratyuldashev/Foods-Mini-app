@@ -52,6 +52,16 @@ const SignInPage = () => {
             <span className="text-primary">Register</span>
           </Link>
         </div>
+        <div className="text-center mt-4">
+          <Link to="/staff/my-orders" className="font-semibold transition text-black">
+            Staff
+          </Link>
+        </div>
+        <div className="text-center mt-4">
+          <Link to="/admin/dashboard" className="font-semibold transition text-black">
+            Admin
+          </Link>
+        </div>
       </footer>
     </main>
   );
