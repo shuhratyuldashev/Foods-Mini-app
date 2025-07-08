@@ -58,19 +58,19 @@ const DeleteFoodModal = ({
   isOpen: boolean;
   handleClose: () => void;
 }) => (
-  <Modal isOpen={isOpen} handleClose={handleClose} title="Delete Food">
-    <p className="text-sm font-semibold text-gray-500">
-      Are you sure you want to delete this food?
+  <Modal isOpen={isOpen} handleClose={handleClose} title="Taomni o‘chirish">
+    <p className="text-sm text-center font-semibold text-gray-500">
+      Ushbu taomni o‘chirmoqchimisiz?
     </p>
     <div className="flex mt-4 gap-2">
       <button
         onClick={handleClose}
         className="bg-primary p-3 font-semibold text-sm text-white rounded-full w-full"
       >
-        No, I won't
+        Yo‘q
       </button>
       <button className="border p-3 font-semibold text-sm rounded-full w-full">
-        Yes, I am sure
+        Ha
       </button>
     </div>
   </Modal>

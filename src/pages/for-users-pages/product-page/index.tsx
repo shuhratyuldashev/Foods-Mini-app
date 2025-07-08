@@ -14,10 +14,10 @@ export interface ProductType {
 }
 
 const data: ProductType = {
-  title: "Burger With Meat 🍔",
-  price: "$ 12,230",
+  title: "Choyxona Oshi",
+  price: "25,000 UZS",
   description:
-    "Burger With Meat is a typical food from our restaurant that is much in demand by many people, this is very recommended for you.",
+    "Choyxona oshi — milliy oshimizning klassik turi bo‘lib, ko‘pchilik tomonidan seviladi. Albatta, sinab ko‘rishga arziydi!",
   grade: 4.5,
   imgs: [product_cover, product_cover, product_cover],
 };
@@ -26,25 +26,27 @@ const ProductPage = () => {
   const [currentPhoto, setCurrentPhoto] = React.useState<number>(0);
   const [counts, setCounts] = React.useState<number>(0);
   return (
-    <main className="p-4 bg-[radial-gradient(circle_at_right,_rgba(255,165,0,0.3)_0%,_white_20%)]">
-      <HeaderProductPage
-        currentPhoto={currentPhoto}
-        imgs={data.imgs}
-        setCurrentPhoto={setCurrentPhoto}
-      />
+    <main className=" bg-[radial-gradient(circle_at_right,_rgba(255,165,0,0.3)_0%,_white_20%)]">
+      <div className="p-4">
+        <HeaderProductPage
+          currentPhoto={currentPhoto}
+          imgs={data.imgs}
+          setCurrentPhoto={setCurrentPhoto}
+        />
 
-      <InfoSectionProductPage {...data} />
+        <InfoSectionProductPage {...data} />
 
-      <section className="p-4">
-        <div className="flex items-center justify-between">
-          <p className="font-semibold text-lg">Recommend For You</p>
-          <span className="font-medium text-primary">See All</span>
-        </div>
+        <section className="p-4">
+          <div className="flex items-center justify-between">
+            <p className="font-semibold text-lg">Sizga tavsiya beramiz</p>
+            <span className="font-medium text-primary">Hammasi</span>
+          </div>
 
-        <ProductsList count={2} />
-      </section>
+          <ProductsList count={2} />
+        </section>
+      </div>
 
-      <footer className="flex justify-between fixed bottom-0 bg-white shadow-2xl left-0 right-0 p-4">
+      <footer className="flex justify-between sticky bottom-0 bg-white shadow-2xl left-0 right-0 p-4">
         <div className="flex gap-4 items-center">
           <button
             onClick={() => setCounts((prev) => counts && prev - 1)}
@@ -98,7 +100,7 @@ const ProductPage = () => {
                 d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
               />
             </svg>
-            Add to Cart
+            Savatga qo'shish
           </button>
         </Link>
       </footer>

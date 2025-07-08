@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const HeaderCart = () => (
   <header className="bg-white sticky top-0 left-0 right-0 p-2 pt-4 flex justify-between items-center mt-5">
-    <Link to="/products">
+    <Link to="/">
       <button className="rounded-full p-2 border flex justify-center items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +20,7 @@ const HeaderCart = () => (
         </svg>
       </button>
     </Link>
-    <p className="font-semibold text-lg">My Cart</p>
+    <p className="font-semibold text-lg">Mening Savatim</p>
     <button className="rounded-full p-2 border flex justify-center items-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"

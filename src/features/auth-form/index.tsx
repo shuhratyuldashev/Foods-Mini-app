@@ -12,76 +12,78 @@ const AuthForm = ({ form }: AuthFormProps) => {
   if (form === "sign-up") {
     return <SignUpForm />;
   }
+  return null;
 };
 
 const SignInForm = () => (
   <form className="mt-10 flex flex-col gap-4">
-    <div className="flex flex-col gap-2 ">
-      <label className="font-semibold">Email Address</label>
+    <div className="flex flex-col gap-2">
+      <label className="font-semibold">Telefon raqami</label>
       <input
-        type="email"
+        type="number"
         className="p-3 border rounded outline-none focus:ring-3 focus:ring-gray-300 transition"
-        placeholder="Enter Email"
+        placeholder="+998 99 999 99 99"
       />
     </div>
-    <div className="flex flex-col gap-2 ">
-      <label className="font-semibold">Password</label>
+    <div className="flex flex-col gap-2">
+      <label className="font-semibold">Parol</label>
       <input
         type="password"
-        className="p-3 border rounded outline-none focus:ring-3 focus:ring-gray-300  transition"
-        placeholder="Password"
+        className="p-3 border rounded outline-none focus:ring-3 focus:ring-gray-300 transition"
+        placeholder="Parol"
       />
     </div>
     <Link
       to="/sign-in/forgot-password"
       className="text-primary font-semibold cursor-pointer my-4 transition text-end hover:underline"
     >
-      Forgot password?
+      Parolni unutdingizmi?
     </Link>
-    <button className="w-full bg-primary text-white rounded-full font-semibold p-4 transition hover:scale-75">
-      Sign In
-    </button>
+    <Link to="/">
+      <button className="w-full bg-primary text-white rounded-full font-semibold p-4 transition hover:scale-75">
+        Tizimga kirish
+      </button>
+    </Link>
   </form>
 );
 
 const SignUpForm = () => (
   <form className="mt-10 flex flex-col gap-4">
-    <div className="flex flex-col gap-2 ">
-      <label className="font-semibold">Email Address</label>
+    <div className="flex flex-col gap-2">
+      <label className="font-semibold">Foydalanuvchi nomi</label>
       <input
-        type="email"
+        type="text"
         className="p-3 border rounded outline-none focus:ring-3 focus:ring-gray-300 transition"
-        placeholder="Enter Email"
+        placeholder="Foydalanuvchi nomi"
       />
     </div>
-    <div className="flex flex-col gap-2 ">
-      <label className="font-semibold">User Name</label>
+    <div className="flex flex-col gap-2">
+      <label className="font-semibold">Telefon raqami</label>
       <input
-        type="email"
+        type="number"
         className="p-3 border rounded outline-none focus:ring-3 focus:ring-gray-300 transition"
-        placeholder="User Name"
+        placeholder="+998 99 999 99 99"
       />
     </div>
-    <div className="flex flex-col gap-2 ">
-      <label className="font-semibold">Password</label>
+    <div className="flex flex-col gap-2">
+      <label className="font-semibold">Parol</label>
       <input
         type="password"
-        className="p-3 border rounded outline-none focus:ring-3 focus:ring-gray-300  transition"
-        placeholder="Password"
+        className="p-3 border rounded outline-none focus:ring-3 focus:ring-gray-300 transition"
+        placeholder="Parol"
       />
     </div>
     <div className="flex items-start gap-2 my-4">
       <Checkbox className="scale-125" id="terms" />
       <label className="text-sm font-medium" htmlFor="terms">
-        I Agree with <span className="text-primary">Terms of Service</span> and{" "}
-        <span className="text-primary">
-          Privacy <br /> Policy
-        </span>
+        <span>Men </span>
+        <span className="text-primary">Foydalanish shartlari</span> va{" "}
+        <span className="text-primary">Maxfiylik siyosati</span> bilan tanishdim
       </label>
     </div>
-    <Link to="/verify-email">
+    <Link to="/">
       <button className="w-full bg-primary text-white rounded-full font-semibold p-4 transition hover:scale-75">
-        Register
+        Ro‘yxatdan o‘tish
       </button>
     </Link>
   </form>

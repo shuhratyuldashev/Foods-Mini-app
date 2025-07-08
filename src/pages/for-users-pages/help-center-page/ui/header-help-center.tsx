@@ -21,7 +21,7 @@ const HeaderHelpCenter = () => (
       </button>
     </Link>
     <p className="font-semibold text-lg mx-auto translate-x-[-20%]">
-      Help Center
+      Yordam Markazi
     </p>
   </header>
 );

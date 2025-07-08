@@ -24,7 +24,7 @@ const HeaderExtraCardPage = () => {
           </svg>
         </button>
       </Link>
-      <p className="font-semibold text-sm">Extra Card</p>
+      <p className="font-semibold text-sm">Qo‘shimcha karta</p>
       <button
         onClick={() => setIsModalOpen(true)}
         className="rounded-full bg-white p-2 text-red-600 border flex justify-center items-center"

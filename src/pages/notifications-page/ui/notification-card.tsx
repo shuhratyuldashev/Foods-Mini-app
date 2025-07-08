@@ -15,8 +15,8 @@ const NotificationCard = () => (
       </svg>
     </div>
     <div className="w-full flex flex-col pl-3">
-      <h2 className="font-semibold">30% Special Discount!</h2>
-      <p className="text-gray-400">Special promotion only valid today</p>
+      <h2 className="font-semibold">30% maxsus chegirma!</h2>
+      <p className="text-gray-400">Faqat bugungi kun uchun amal qiladi</p>
     </div>
   </div>
 );

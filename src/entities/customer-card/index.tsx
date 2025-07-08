@@ -5,16 +5,9 @@ interface CustomerCardProps {
   avatar: string;
   user_name: string;
   phone: string;
-  email: string;
 }
 
-const CustomerCard = ({
-  id,
-  avatar,
-  user_name,
-  phone,
-  email,
-}: CustomerCardProps) => {
+const CustomerCard = ({ id, avatar, user_name, phone }: CustomerCardProps) => {
   return (
     <Link
       to={`/user/${id}`}
@@ -29,9 +22,7 @@ const CustomerCard = ({
       </div>
       <div className="flex flex-col items-start">
         <h2 className="font-semibold">{user_name}</h2>
-        <p className="text-gray-500 font-bold text-sm">
-          {phone} / {email}
-        </p>
+        <p className="text-gray-500 font-bold text-sm">{phone}</p>
       </div>
     </Link>
   );

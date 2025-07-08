@@ -14,8 +14,8 @@ const ProductsPage = () => {
       <HeroHomePage bg={bg} />
       <section className="p-4">
         <div className="flex items-center justify-between">
-          <p className="font-semibold text-lg">Find by category</p>
-          <span className="font-medium text-primary">See All</span>
+          <p className="font-semibold text-lg">Turkumlar bo‘yicha</p>
+          <span className="font-medium text-primary">Hammasi</span>
         </div>
 
         <CategoriesList
@@ -26,7 +26,7 @@ const ProductsPage = () => {
 
         <ProductsList count={8} />
       </section>
-      <BottomBar currentPage="Home" />
+      <BottomBar currentPage="Bosh sahifa" />
     </main>
   );
 };

@@ -20,9 +20,7 @@ const HeaderNotificationPage = () => (
         </svg>
       </button>
     </Link>
-    <p className="font-semibold text-lg mx-auto translate-x-[-10%]">
-      Notifications
-    </p>
+    <p className="font-semibold text-lg mx-auto translate-x-[-10%]">Xabarlar</p>
   </header>
 );
 

@@ -6,10 +6,10 @@ const HeroHomePage = ({ bg }: { bg: string }) => {
       style={{ backgroundImage: `url(${bg})` }}
       className="flex bg-center bg-cover bg-no-repeat flex-col justify-center text-md p-3"
     >
-      <header className="flex justify-between mt-4 items-center">
+      <header className="flex justify-between backdrop-blur rounded-md py-1 px-2 mt-4 items-center">
         <div className="text-white">
           <div className="flex items-center gap-1 font-medium cursor-pointer">
-            Your Location
+            Yetkazib berish Manzili
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -45,12 +45,12 @@ const HeroHomePage = ({ bg }: { bg: string }) => {
                 d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
               />
             </svg>
-            New York City
+            Mirzo Ulug'bek
           </div>
         </div>
         <div className="flex items-center gap-2">
           <Link to="/search">
-            <button className="border border-white text-white rounded-full p-2">
+            <button className="border backdrop-blur bg-gray-400/10 border-white text-white rounded-full p-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -68,7 +68,7 @@ const HeroHomePage = ({ bg }: { bg: string }) => {
             </button>
           </Link>
           <Link to="/notifications">
-            <button className="border border-white text-white rounded-full p-2 transition">
+            <button className="border backdrop-blur bg-gray-400/10 border-white text-white rounded-full p-2 transition">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -88,7 +88,7 @@ const HeroHomePage = ({ bg }: { bg: string }) => {
         </div>
       </header>
       <h1 className="text-4xl mt-4 text-white font-bold">
-        Provide the best food for you
+        Siz uchun eng yaxshi taomlarni taqdim etamiz
       </h1>
     </section>
   );

@@ -8,19 +8,19 @@ const DeleteCardModal = ({
   handleClose: () => void;
   isOpen: boolean;
 }) => (
-  <Modal title="Confirm Delete" isOpen={isOpen} handleClose={handleClose}>
+  <Modal title="O‘chirimoqchimisiz" isOpen={isOpen} handleClose={handleClose}>
     <p className="text-center mt-4 text-gray-400 font-semibold text-sm">
-      Are you sure to delete this card?
+      Ushbu kartani o‘chirmoqchimisiz?
     </p>
     <div className="flex gap-2 mt-5 font-semibold">
       <button
         onClick={handleClose}
-        className="bg-primary text-white p-3 w-1/2 flex items-center gap-2 justify-center rounded-full"
+        className="bg-primary text-white p-3 w-1/2  text-sm flex items-center gap-2 justify-center rounded-full"
       >
-        No, I won't
+        Yo‘q, kerak emas
       </button>
-      <button className="p-3 w-1/2 flex items-center gap-2 justify-center rounded-full border">
-        Yes, Of course
+      <button className="p-3 w-1/2 flex items-center text-sm gap-2 justify-center rounded-full border">
+        Ha, albatta
       </button>
     </div>
   </Modal>

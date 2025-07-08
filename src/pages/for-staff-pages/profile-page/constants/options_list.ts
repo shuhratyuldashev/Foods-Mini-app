@@ -8,23 +8,23 @@ import add_account_icon from "@/shared/assets/icons/add-account-icon.png";
 export const option_list = [
   {
     id: 11,
-    title: "Profile",
+    title: "Profil", // "Profile"
     list: [
       {
         id: 1,
-        title: "Personal Data",
+        title: "Shaxsiy ma'lumotlar", // "Personal Data"
         link: "/profile/personal-date",
         icon: user_icon,
       },
       {
         id: 2,
-        title: "Settings",
+        title: "Sozlamalar", // "Settings"
         link: "/profile/settings",
         icon: settings_icon,
       },
       {
         id: 3,
-        title: "Extra Card",
+        title: "Qo‘shimcha karta", // "Extra Card"
         link: "/profile/extra-card",
         icon: card_icon,
       },
@@ -32,23 +32,23 @@ export const option_list = [
   },
   {
     id: 12,
-    title: "Support",
+    title: "Yordam", // "Support"
     list: [
       {
         id: 4,
-        title: "Help center",
+        title: "Yordam markazi", // "Help center"
         link: "/profile/help-center",
         icon: info_icon,
       },
       {
         id: 5,
-        title: "Request Account Deletion",
+        title: "Profilni o‘chirish",
         link: "function_to_delete",
         icon: delete_icon,
       },
       {
         id: 6,
-        title: "Add another account",
+        title: "Yangi hisob qo‘shish",
         link: "function_to_add",
         icon: add_account_icon,
       },

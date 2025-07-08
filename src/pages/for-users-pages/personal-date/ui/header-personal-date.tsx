@@ -21,7 +21,7 @@ const HeaderPersonalDate = () => (
       </button>
     </Link>
     <p className="font-semibold text-lg mx-auto translate-x-[-10%]">
-      Personal Date
+      Shaxsiy ma'lumotlar
     </p>
   </header>
 );

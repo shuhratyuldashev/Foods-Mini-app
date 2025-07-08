@@ -23,7 +23,7 @@ const HeaderMyOrderPage = () => {
         </button>
       </Link>
       <p className="font-semibold text-sm mx-auto translate-x-[-15%] text-gray-500">
-        Order ID <span className="text-black">888333777</span>
+        Buyurtma IDsi <span className="text-black">888333777</span>
       </p>
     </header>
   );

@@ -12,37 +12,36 @@ const MyOrderPage = ({ locale }: { locale?: number[] }) => {
       <HeaderMyOrderPage />
 
       <section className="flex flex-col mt-4">
-        <p className="text-gray-400 text-sm">You deserve better meal</p>
+        <p className="text-gray-400 text-sm">Siz yaxshiroq taomga loyiqsiz</p>
 
-        <h2 className="font-semibold text-base">Item Ordered</h2>
+        <h2 className="font-semibold text-base mt-4">Buyurtma qilingan taom</h2>
 
         <div className="flex items-center">
           <div className="w-18 my-4 h-14">
             <img
               className="w-full h-full rounded-md object-cover"
               src={burger_photo}
-              alt=""
+              alt="burger"
             />
           </div>
           <div className="flex justify-between w-full items-center">
             <div className="flex flex-col ml-2 justify-between">
-              <h2 className="font-semibold">Burger With Meat</h2>
-              <p className="text-sm text-primary font-bold">$ 12,230</p>
+              <h2 className="font-semibold">Choyxona oshi</h2>
+              <p className="text-sm text-primary font-bold">25,000 UZS</p>
             </div>
-            <p className="text-gray-400 text-sm font-medium">14 items</p>
+            <p className="text-gray-400 text-sm font-medium">14 ta mahsulot</p>
           </div>
         </div>
 
         <div className="flex justify-between my-2 font-medium">
-          Status:
-          {/* <span className="bg-primary text-white text-sm font-semibold py-1 px-2 rounded-full">Delivering</span> */}
+          Holati:
           <span className="bg-gray-400 text-white text-sm font-semibold py-1 px-2 rounded-full">
-            Canceled
+            Bekor qilingan
           </span>
         </div>
 
-        <div className="flex flex-col">
-          <h2 className="font-semibold text-base">Details Transaction</h2>
+        <div className="flex flex-col mt-4">
+          <h2 className="font-semibold text-base">To‘lov tafsilotlari</h2>
           {order_details_constants.map((d) => (
             <div
               key={d.id}
@@ -57,7 +56,7 @@ const MyOrderPage = ({ locale }: { locale?: number[] }) => {
         <Separator className="my-4" />
 
         <div className="flex flex-col">
-          <h2 className="font-semibold text-base">Details Transaction</h2>
+          <h2 className="font-semibold text-base">Yetkazish tafsilotlari</h2>
           {order_deliver_constants.map((d) => (
             <div
               key={d.id}
@@ -74,11 +73,12 @@ const MyOrderPage = ({ locale }: { locale?: number[] }) => {
             src="https://yandex.com/map-widget/v1/?um=constructor%3Aabcdef1234567890..."
             width="100%"
             height="400"
+            title="Xarita"
           ></iframe>
         </div>
 
         <button className="p-4 w-full text-center mt-20 bg-primary text-white font-semibold text-sm rounded-full">
-          Complete the
+          Bajarildi deb belgilash
         </button>
       </section>
     </main>

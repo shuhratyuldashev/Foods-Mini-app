@@ -13,7 +13,7 @@ const EmployersListPage = () => {
           <CustomerCard key={c.id} {...c} />
         ))}
       </section>
-      <BottomBar isForAdmin currentPage="employes" />
+      <BottomBar isForAdmin currentPage="Ishchilar" />
     </main>
   );
 };

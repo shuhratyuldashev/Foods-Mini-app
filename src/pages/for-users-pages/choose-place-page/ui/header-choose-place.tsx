@@ -21,7 +21,7 @@ const HeaderChoosePlace = () => (
       </button>
     </Link>
     <p className="font-semibold text-lg mx-auto translate-x-[-10%]">
-      Choose Place
+      Joy tanglang
     </p>
   </header>
 );

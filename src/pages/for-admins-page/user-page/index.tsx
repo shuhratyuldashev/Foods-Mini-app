@@ -40,29 +40,8 @@ const UserPage = () => {
       </div>
 
       <div className="flex border items-center h-14 justify-between gap-2 p-2 bg-gray-100 rounded-md">
-        <div className="font-semibold">Gender:</div>
-        <div className="text-sm font-bold text-gray-500">Female</div>
-      </div>
-
-      <div className="w-full h-14 border flex items-center justify-between p-2 bg-gray-100 rounded-md">
-        <div className="font-semibold">Date of Birth:</div>
-        <div className="font-bold text-gray-500 text-sm">01.01.2001</div>
-      </div>
-
-      <div className="w-full h-14 flex justify-between gap-2">
-        <div className="w-full border flex flex-col items-start p-2 bg-gray-100 rounded-md">
-          <div className="font-semibold">Phone:</div>
-          <div className="font-bold text-gray-500 text-sm">
-            +998 99 999 99 99
-          </div>
-        </div>
-
-        <div className="w-full border h-14 flex flex-col items-start p-2 bg-gray-100 rounded-md">
-          <div className="font-semibold">Email:</div>
-          <div className="font-bold text-gray-500 text-sm">
-            johndoe@gmail.com
-          </div>
-        </div>
+        <div className="font-semibold">Phone:</div>
+        <div className="font-bold text-gray-500">+998 99 999 99 99</div>
       </div>
     </main>
   );

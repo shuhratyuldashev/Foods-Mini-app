@@ -1,4 +1,4 @@
-import { Separator } from "../../../../shared/ui/separator";
+import { Separator } from "@/shared/ui/separator";
 
 const InfoSectionProductPage = ({
   title,
@@ -17,7 +17,7 @@ const InfoSectionProductPage = ({
 
     <div className="flex justify-between items-center bg-primary/10 font-medium w-full mt-5 rounded-md p-2">
       <div className="text-primary flex gap-2 items-center">
-        $<p className="text-gray-400 text-sm">Free Delivery</p>
+        $<p className="text-gray-400 text-sm">Tekin yetkazish</p>
       </div>
       <div className="text-primary flex gap-2 items-center">
         <svg
@@ -53,7 +53,7 @@ const InfoSectionProductPage = ({
     <Separator className="my-5" />
 
     <div>
-      <h2 className="text-lg font-bold">Description</h2>
+      <h2 className="text-lg font-bold">Tavsif</h2>
       <p className="mt-2 font-medium text-sm text-gray-400">{description}</p>
     </div>
   </section>

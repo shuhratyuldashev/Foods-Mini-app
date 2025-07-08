@@ -12,9 +12,13 @@ const OrderModal = ({
   const [typePickUp, setTypePickUp] = React.useState<string>("");
 
   return (
-    <Modal title="Pick up type" isOpen={isOpen} handleClose={handleClose}>
+    <Modal
+      title="Yetkazib berish turi"
+      isOpen={isOpen}
+      handleClose={handleClose}
+    >
       <div className="flex flex-col gap-2 items-center">
-        <p className="text-sm text-gray-500">Choose the type of pick up</p>
+        <p className="text-sm text-gray-500">Yetkazib berish turini tanlang</p>
 
         <Link
           to="/order/pick-up"
@@ -24,12 +28,13 @@ const OrderModal = ({
           <h1
             className={`font-semibold ${typePickUp == "pick up" && "text-primary"}`}
           >
-            Self-Pickup
+            O‘zingiz olib ketish
           </h1>
           <p className="text-gray-500 text-sm">
-            Pick up your order from the selected location.
+            Buyurtmangizni belgilangan manzildan o‘zingiz olib ketasiz.
           </p>
         </Link>
+
         <Link
           to="/order"
           onClick={() => setTypePickUp("deliver")}
@@ -38,12 +43,13 @@ const OrderModal = ({
           <h1
             className={`font-semibold ${typePickUp == "deliver" && "text-primary"}`}
           >
-            Courier Delivery
+            Kuryer orqali yetkazish
           </h1>
           <p className="text-gray-500 text-sm">
-            We'll deliver your order to your address.
+            Buyurtmangizni sizning manzilingizga yetkazamiz.
           </p>
         </Link>
+
         <Link
           to="/choose-place"
           onClick={() => setTypePickUp("in branch")}
@@ -52,10 +58,10 @@ const OrderModal = ({
           <h1
             className={`font-semibold ${typePickUp == "in branch" && "text-primary"}`}
           >
-            On-Site
+            Filialda foydalanish
           </h1>
           <p className="text-gray-500 text-sm">
-            Receive and use your order directly at the branch.
+            Buyurtmangizni filialdan olib, bevosita joyida foydalaning.
           </p>
         </Link>
       </div>

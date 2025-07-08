@@ -4,9 +4,10 @@ const SearchPage = () => {
   return (
     <main className="p-4">
       <h1 className="text-4xl mt-5 font-bold">
-        Find Your <br />
-        Favorite Food
+        Sevimli <br />
+        taomingizni toping
       </h1>
+
       <form className="mt-10">
         <div className="flex gap-2 border rounded-md focus-within:ring-3 focus-within:ring-gray-300 transition">
           <button className="p-3">
@@ -26,7 +27,7 @@ const SearchPage = () => {
           <input
             type="text"
             className="h-full w-full py-3 outline-none"
-            placeholder="Search..."
+            placeholder="Qidirish..."
           />
           <button className="p-3">
             <svg
@@ -44,8 +45,8 @@ const SearchPage = () => {
       <section className="flex flex-col items-center mt-10">
         <img src={img_no_result} alt="img_no_result" />
         <p className="text-gray-400 text-center">
-          Please check your search for any typos or spelling errors, or try a
-          different search term.
+          Iltimos, yozuvda xatolik yo‘qligini tekshiring yoki boshqa so‘z
+          kiriting.
         </p>
       </section>
     </main>

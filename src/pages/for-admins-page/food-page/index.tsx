@@ -7,7 +7,7 @@ const FoodPage = () => {
       <HeaderFoodPage />
 
       <div className="p-2.5 border rounded-md flex flex-col gap-2 w-full">
-        <h2 className="font-semibold">Image:</h2>
+        <h2 className="font-semibold">Rasm:</h2>
         <div className="w-full aspect-square">
           <img
             src={img}
@@ -18,13 +18,13 @@ const FoodPage = () => {
       </div>
 
       <div className="p-2.5 border rounded-md flex justify-between items-center w-full">
-        <h2 className="font-semibold">Title:</h2>
-        <p className="font-bold text-gray-500 text-sm">Ordinary burger</p>
+        <h2 className="font-semibold">Sarlavha:</h2>
+        <p className="font-bold text-gray-500 text-sm">Choyxona oshi</p>
       </div>
 
       <div className="w-full flex gap-x-2.5">
         <div className="p-2.5 border rounded-md flex justify-between items-center w-full">
-          <h2 className="font-semibold">Rating:</h2>
+          <h2 className="font-semibold">Bahosi:</h2>
           <p className="font-bold flex gap-1 text-primary text-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -42,15 +42,15 @@ const FoodPage = () => {
           </p>
         </div>
         <div className="p-2.5 border rounded-md flex justify-between items-center w-full">
-          <h2 className="font-semibold">Price:</h2>
-          <p className="font-bold text-primary text-sm">$ 17,230</p>
+          <h2 className="font-semibold">Narxi:</h2>
+          <p className="font-bold text-primary text-sm">25,000 UZS</p>
         </div>
       </div>
       <div className="p-2.5 border rounded-md flex flex-col w-full">
-        <h2 className="font-semibold">Description:</h2>
+        <h2 className="font-semibold">Tafsiv:</h2>
         <p className="font-bold text-gray-500 text-sm">
-          Burger With Meat is a typical food from our restaurant that is much in
-          demand by many people, this is very recommended for you.
+          Choyxona oshi — milliy oshimizning klassik turi bo‘lib, ko‘pchilik
+          tomonidan seviladi. Albatta, sinab ko‘rishga arziydi!
         </p>
       </div>
     </main>

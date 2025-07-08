@@ -1,5 +1,6 @@
 import { Switch } from "../../shared/ui/switch";
 import ChooseLanguageDrawer from "./ui/choose-language-drawer";
+import ChooseLocationDrawer from "./ui/choose-location-drawer";
 import HeaderSettingsPage from "./ui/header-settings-page";
 import { useState } from "react";
 
@@ -10,24 +11,21 @@ const SettingsPage = () => {
       <HeaderSettingsPage />
 
       <section className="mt-5 flex flex-col gap-3">
-        <p className="font-semibold text-gray-400 text-sm">PROFILE</p>
+        <p className="font-semibold text-gray-400 text-sm">Akaunt</p>
 
         <div className="flex justify-between">
-          <p className="font-semibold text-base">Push Notifications</p>
+          <p className="font-semibold text-base">Xabarlarni yoqish</p>
           <Switch className="scale-110" />
         </div>
-        <div className="flex justify-between">
-          <p className="font-semibold text-base">Location</p>
-          <Switch defaultChecked className="scale-110" />
-        </div>
+        <ChooseLocationDrawer />
         <ChooseLanguageDrawer
           currentLanguage={currentLanguage}
           setCurrentLanguage={setCurrentLanguage}
         />
 
-        <p className="font-semibold text-gray-400 text-sm mt-4">OTHER</p>
+        <p className="font-semibold text-gray-400 text-sm mt-4">Boshqa</p>
         <div className="flex justify-between items-center">
-          <p className="font-semibold text-base">About Ticketis </p>
+          <p className="font-semibold text-base">Biz Haqida </p>
           <div className="flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +45,7 @@ const SettingsPage = () => {
         </div>
 
         <div className="flex justify-between items-center">
-          <p className="font-semibold text-base">Privacy Policy</p>
+          <p className="font-semibold text-base">Maxfiylik siyosati</p>
           <div className="flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +65,7 @@ const SettingsPage = () => {
         </div>
 
         <div className="flex justify-between items-center">
-          <p className="font-semibold text-base">Terms and Conditions</p>
+          <p className="font-semibold text-base">Foydalanish shartlari.</p>
           <div className="flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"

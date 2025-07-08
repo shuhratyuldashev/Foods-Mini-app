@@ -14,7 +14,7 @@ const ChoosePlacePage = () => {
     <main>
       <HeaderChoosePlace />
       <section className="mt-4 p-4">
-        <p className="font-semibold text-sm text-gray-500">Places list</p>
+        <p className="font-semibold text-sm text-gray-500">Joylar ro'yxati</p>
         <div className="grid grid-cols-8 gap-1 mt-2">
           {places_list.map((p) => (
             <div

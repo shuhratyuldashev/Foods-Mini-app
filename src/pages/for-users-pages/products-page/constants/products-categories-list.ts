@@ -6,22 +6,22 @@ import pizza_icon from "@/shared/assets/icons/pizza-icon.png";
 export const products_categories = [
   {
     id: 1,
-    name: "Burger",
+    name: "Palov",
     img: burger_icon,
   },
   {
     id: 2,
-    name: "Taco",
+    name: "Sho'rva",
     img: taco_icon,
   },
   {
     id: 3,
-    name: "Drink",
+    name: "Go'sht",
     img: drink_icon,
   },
   {
     id: 4,
-    name: "Pizza",
+    name: "Choy",
     img: pizza_icon,
   },
 ];

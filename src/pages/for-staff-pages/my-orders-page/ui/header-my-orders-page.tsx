@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 
 const HeaderMyOrdersPage = () => (
   <header className="flex rounded-b-3xl p-4 shadow bg-white justify-end items-center">
-    <p className="font-semibold text-lg mx-auto translate-x-[30%]">My orders</p>
+    <p className="font-semibold text-lg mx-auto translate-x-[13%]">
+      Mening buyurtmalarim
+    </p>
     <Link to="/notifications">
       <button className="rounded-full bg-white p-2 border flex justify-center items-center">
         <svg

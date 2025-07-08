@@ -21,7 +21,7 @@ const SearchBarMyOrder = () => {
         <input
           type="text"
           className="h-full w-full py-3 outline-none"
-          placeholder="Search..."
+          placeholder="Qidiruv..."
         />
       </div>
     </form>

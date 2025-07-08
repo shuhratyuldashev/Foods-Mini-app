@@ -1,8 +1,27 @@
 import avatar from "@/shared/assets/images/avatar-2.jpg";
+import { Link } from "react-router-dom";
 
 const HeaderOrderPage = () => {
   return (
-    <header className="p-4 bg-black">
+    <header className="p-4 flex items-center gap-2 bg-black">
+      <Link to="/cart">
+        <div className="p-2 rounded-full border border-white text-white flex itemc justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15.75 19.5 8.25 12l7.5-7.5"
+            />
+          </svg>
+        </div>
+      </Link>
       <div className="p-2 rounded-full bg-white w-full">
         <div className="flex gap-2 items-center">
           <div className="w-10 h-10">

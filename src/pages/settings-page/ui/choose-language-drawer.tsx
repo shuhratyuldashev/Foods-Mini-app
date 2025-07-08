@@ -1,8 +1,4 @@
-import {
-  Drawer,
-  DrawerContent,
-  DrawerTrigger,
-} from "../../../shared/ui/drawer";
+import { Drawer, DrawerContent, DrawerTrigger } from "@/shared/ui/drawer";
 
 const languages_list = [
   {
@@ -38,7 +34,7 @@ const ChooseLanguageDrawer = ({
     <Drawer>
       <DrawerTrigger>
         <div className="flex justify-between items-center">
-          <p className="font-semibold text-base">Language</p>
+          <p className="font-semibold text-base">Til</p>
           <div className="flex items-center gap-2">
             <span className="text-sm font-medium">{currentLanguage}</span>
             <svg
@@ -60,7 +56,7 @@ const ChooseLanguageDrawer = ({
       </DrawerTrigger>
       <DrawerContent>
         <div className="p-4 flex flex-col gap-2">
-          <p className="font-semibold">Select Language</p>
+          <p className="font-semibold">Tilni tanglang</p>
           {languages_list.map((l) => (
             <div
               onClick={() => setCurrentLanguage(l.title)}

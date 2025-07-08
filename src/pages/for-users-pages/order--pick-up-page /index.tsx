@@ -5,8 +5,8 @@ const OrderPickUpPage = () => {
     <main>
       <HeaderOrderPage />
       <section className="w-f p-4">
-        <h2 className="font-semibold">Your Delivery Time</h2>
-        <p className="text-sm text-gray-400">Eslimated 8:30 = 9:15 PM</p>
+        <h2 className="font-semibold">Yetkazib berish vaqti</h2>
+        <p className="text-sm text-gray-400">8:30 dan 9:15 gacha — 45 daqiqa</p>
 
         <div className="my-4 flex items-center justify-between w-full max-w-md mx-auto">
           <div className="flex flex-col items-center rounded-full bg-primary p-1 text-white">
@@ -84,8 +84,17 @@ const OrderPickUpPage = () => {
           </div>
         </div>
 
-        <h2 className="font-semibold">Order</h2>
-        <p className="text-sm text-gray-400">2 Burger With Meat</p>
+        <h2 className="font-semibold">Buyurtma</h2>
+        <p className="text-sm text-gray-400">Choxona oshi</p>
+
+        <div className="mt-5">
+          <iframe
+            src="https://yandex.com/map-widget/v1/?um=constructor%3Aabcdef1234567890"
+            width="100%"
+            height="400"
+            title="Xarita"
+          ></iframe>
+        </div>
       </section>
     </main>
   );

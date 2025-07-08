@@ -2,16 +2,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProductsPage from "@/pages/for-users-pages/products-page";
 import SignInPage from "@/pages/sign-in-page";
 import SignUpPage from "@/pages/sign-up-page";
-import HeroPage from "@/pages/for-users-pages/hero-page";
 import CartPage from "@/pages/for-users-pages/cart-page";
-import MessagesPage from "@/pages/messages-page";
+import OrderedPage from "@/pages/ordered-page";
 import ProfilePage from "@/pages/for-users-pages/profile-page";
 import ForgotPasswordPage from "@/pages/for-users-pages/forgot-password-page";
 import NotificationsPage from "@/pages/notifications-page";
 import SearchPage from "@/pages/for-users-pages/search-page";
-import ChatPage from "@/pages/chat-page";
 import ProductPage from "@/pages/for-users-pages/product-page";
-import EmailVerificationPage from "@/pages/for-users-pages/email-verification-page";
 import PersonalDatePage from "@/pages/for-users-pages/personal-date";
 import SettingsPage from "@/pages/settings-page";
 import HelpCenterPage from "@/pages/for-users-pages/help-center-page";
@@ -21,7 +18,6 @@ import ResetPasswordPage from "@/pages/for-users-pages/reset-password-page";
 import PaymentPage from "@/pages/for-users-pages/payment-page";
 import OrderPage from "@/pages/for-users-pages/order-page";
 import MyOrdersPage from "@/pages/for-staff-pages/my-orders-page";
-import StaffMessagesPage from "@/pages/for-staff-pages/messages-page";
 import StaffProfilePage from "@/pages/for-staff-pages/profile-page";
 import MyOrderPage from "@/pages/for-staff-pages/my-order-page";
 import MyOrdersSortedPage from "@/pages/for-staff-pages/my-orders-sorted-page";
@@ -40,19 +36,16 @@ const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HeroPage />} />
+        <Route path="/" element={<ProductsPage />} />
         <Route path="/sign-in" element={<SignInPage />} />
         <Route path="/sign-up" element={<SignUpPage />} />
-        <Route path="/verify-email" element={<EmailVerificationPage />} />
-        <Route path="/products" element={<ProductsPage />} />
         <Route path="/products/:id" element={<ProductPage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/order" element={<OrderPage />} />
         <Route path="/order/pick-up" element={<OrderPickUpPage />} />
         <Route path="/choose-place" element={<ChoosePlacePage />} />
-        <Route path="/messages" element={<MessagesPage />} />
-        <Route path="/messages/:id" element={<ChatPage />} />
+        <Route path="/ordered" element={<OrderedPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/reset-password" element={<ResetPasswordPage />} />
         <Route path="/profile/personal-date" element={<PersonalDatePage />} />
@@ -70,7 +63,6 @@ const AppRouter = () => {
         <Route path="/staff/my-orders" element={<MyOrdersPage />} />
         <Route path="/staff/my-order/:id" element={<MyOrderPage />} />
         <Route path="/staff/my-orders/:type" element={<MyOrdersSortedPage />} />
-        <Route path="/staff/messages" element={<StaffMessagesPage />} />
         <Route path="/staff/profile" element={<StaffProfilePage />} />
 
         <Route path="/admin/dashboard" element={<DashboardPage />} />

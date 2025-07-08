@@ -20,7 +20,9 @@ const HeaderSettingsPage = () => (
         </svg>
       </button>
     </Link>
-    <p className="font-semibold text-lg mx-auto translate-x-[-20%]">Settings</p>
+    <p className="font-semibold text-lg mx-auto translate-x-[-20%]">
+      Sozlamalar
+    </p>
   </header>
 );
 

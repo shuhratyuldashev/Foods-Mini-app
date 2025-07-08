@@ -24,7 +24,7 @@ const MyOrdersPage = () => {
           ))}
         </div>
       </section>
-      <BottomBar isForStaff currentPage="My-orders" />
+      <BottomBar isForStaff currentPage="Buyurtmalarim" />
     </main>
   );
 };

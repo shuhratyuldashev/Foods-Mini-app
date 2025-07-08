@@ -7,7 +7,7 @@ const NotificationsPage = () => {
       <section className="bg-white w-full p-4">
         <HeaderNotificationPage />
         <div>
-          <p className="font-semibold text-gray-500 text-sm mt-5">Today</p>
+          <p className="font-semibold text-gray-500 text-sm mt-5">Bugun</p>
         </div>
         <div className="flex flex-col mt-5 gap-4">
           {Array.from({ length: 3 }).map((__, i) => (
@@ -17,7 +17,7 @@ const NotificationsPage = () => {
       </section>
       <section className="bg-white mt-2 w-full p-4">
         <div>
-          <p className="font-semibold text-gray-500 text-sm mt-5">Yesterday</p>
+          <p className="font-semibold text-gray-500 text-sm mt-5">Kecha</p>
         </div>
         <div className="flex flex-col mt-5 gap-4">
           {Array.from({ length: 3 }).map((__, i) => (

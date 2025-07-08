@@ -5,7 +5,7 @@ import {
   payment_deliver_constants,
   payment_details_constants,
 } from "./constants/payment-fulll-details-list";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const PaymentPage = () => {
   return (
@@ -13,9 +13,11 @@ const PaymentPage = () => {
       <HeaderPaymentPage />
 
       <section className="flex flex-col mt-4">
-        <p className="text-gray-400 text-sm">You deserve better meal</p>
+        <p className="text-gray-400 text-sm">Siz yaxshiroq taomga loyiqsiz</p>
 
-        <h2 className="font-semibold text-base">Item Ordered</h2>
+        <h2 className="font-semibold text-base">
+          Buyurtma berilgan mahsulotlar
+        </h2>
 
         <div className="flex items-center">
           <div className="w-18 my-4 h-14">
@@ -27,15 +29,15 @@ const PaymentPage = () => {
           </div>
           <div className="flex justify-between w-full items-center">
             <div className="flex flex-col ml-2 justify-between">
-              <h2 className="font-semibold">Burger With Meat</h2>
-              <p className="text-sm text-primary font-bold">$ 12,230</p>
+              <h2 className="font-semibold">Choyxona Oshi</h2>
+              <p className="text-sm text-primary font-bold">250,000 UZS</p>
             </div>
-            <p className="text-gray-400 text-sm font-medium">14 items</p>
+            <p className="text-gray-400 text-sm font-medium">14 ta mahsulot</p>
           </div>
         </div>
 
         <div className="flex flex-col">
-          <h2 className="font-semibold text-base">Details Transaction</h2>
+          <h2 className="font-semibold text-base">Buyurtma tafsilotlari</h2>
           {payment_details_constants.map((d) => (
             <div
               key={d.id}
@@ -50,7 +52,7 @@ const PaymentPage = () => {
         <Separator className="my-4" />
 
         <div className="flex flex-col">
-          <h2 className="font-semibold text-base">Details Transaction</h2>
+          <h2 className="font-semibold text-base">Buyurtmachi tafsilotlari</h2>
           {payment_deliver_constants.map((d) => (
             <div
               key={d.id}
@@ -62,11 +64,11 @@ const PaymentPage = () => {
           ))}
         </div>
 
-        <Link to="/order">
+        {/* <Link to="/order">
           <button className="p-4 w-full text-center bg-primary text-white font-semibold rounded-full mt-16">
             Chackout Now
           </button>
-        </Link>
+        </Link> */}
       </section>
     </main>
   );

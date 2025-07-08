@@ -3,8 +3,6 @@ import HeaderFoodsListPage from "./ui/header-list-page";
 import { Link } from "react-router-dom";
 import { foods_list } from "@/shared/constants/foods-list";
 
-
-
 const FoodsListPage = () => {
   return (
     <main className="p-4">
@@ -14,7 +12,7 @@ const FoodsListPage = () => {
           <FoodCard key={f.id} {...f} />
         ))}
       </section>
-      <BottomBar isForAdmin currentPage="foods" />
+      <BottomBar isForAdmin currentPage="Mahsulotlar" />
     </main>
   );
 };

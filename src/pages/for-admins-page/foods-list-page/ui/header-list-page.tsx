@@ -9,7 +9,7 @@ import {
 const HeaderFoodsListPage = () => {
   return (
     <header className="flex items-center flex-col gap-2 mt-5">
-      <p className="font-semibold">Foods List</p>
+      <p className="font-semibold">Mahsulotlar ro'yxati</p>
       <DrawerAddNewFood />
     </header>
   );
@@ -18,17 +18,17 @@ const HeaderFoodsListPage = () => {
 const DrawerAddNewFood = () => (
   <Drawer>
     <DrawerTrigger className="border text-sm w-full p-4 rounded-full font-semibold">
-      Add New Food
+      Yangi mahsulot qo'shish
     </DrawerTrigger>
     <DrawerContent>
       <DrawerHeader>
-        <DrawerTitle>Add New Food</DrawerTitle>
+        <DrawerTitle>Yangi mahsulot qo'shish</DrawerTitle>
       </DrawerHeader>
       <main className="p-4">
         <form className="flex flex-col gap-2">
           <div>
             <label htmlFor="title" className="font-semibold text-sm">
-              Title
+              Sarlavha
             </label>
             <input
               placeholder="Title"
@@ -39,7 +39,7 @@ const DrawerAddNewFood = () => (
           </div>
           <div>
             <label htmlFor="image" className="font-semibold text-sm">
-              Image
+              Rasm
             </label>
             <input
               placeholder="Image"
@@ -50,7 +50,7 @@ const DrawerAddNewFood = () => (
           </div>
           <div>
             <label htmlFor="price" className="font-semibold text-sm">
-              Price
+              Narxi
             </label>
             <input
               placeholder="Price"
@@ -61,7 +61,7 @@ const DrawerAddNewFood = () => (
           </div>
           <div>
             <label htmlFor="description" className="font-semibold text-sm">
-              Description
+              Tafsiv
             </label>
             <textarea
               placeholder="Description"
@@ -71,7 +71,7 @@ const DrawerAddNewFood = () => (
           </div>
 
           <button className="mt-2 bg-primary p-4 font-semibold text-white text-sm rounded-full">
-            Add New Food
+            Yangi mahsulot qo'shish
           </button>
         </form>
       </main>

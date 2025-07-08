@@ -15,12 +15,12 @@ const BottomBar = ({
 
   if (!isForStaff && !isForAdmin) {
     return (
-      <section className="fixed bottom-0 bg-white left-0 right-0 z-10 shadow-2xl rounded-t-4xl">
+      <section className="sticky bottom-0 bg-white left-0 right-0 z-10 shadow-2xl rounded-t-4xl">
         <ul className="flex w-full items-center justify-evenly p-4">
           <li>
-            <Link to="/products">
+            <Link to="/">
               <ButtonBottomBar
-                value="Home"
+                value="Bosh sahifa"
                 currentTab={currentTab}
                 setCurrentTab={setCurrentTab}
               >
@@ -42,7 +42,7 @@ const BottomBar = ({
           <li>
             <Link to="/cart">
               <ButtonBottomBar
-                value="Cart"
+                value="Savat"
                 currentTab={currentTab}
                 setCurrentTab={setCurrentTab}
               >
@@ -62,21 +62,21 @@ const BottomBar = ({
             </Link>
           </li>
           <li>
-            <Link to="/messages">
+            <Link to="/ordered">
               <ButtonBottomBar
-                value="Messages"
+                value="Buyurtmalarim"
                 currentTab={currentTab}
                 setCurrentTab={setCurrentTab}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
+                  viewBox="0 0 24 24"
                   fill="currentColor"
                   className="size-6"
                 >
                   <path
                     fillRule="evenodd"
-                    d="M10 3c-4.31 0-8 3.033-8 7 0 2.024.978 3.825 2.499 5.085a3.478 3.478 0 0 1-.522 1.756.75.75 0 0 0 .584 1.143 5.976 5.976 0 0 0 3.936-1.108c.487.082.99.124 1.503.124 4.31 0 8-3.033 8-7s-3.69-7-8-7Zm0 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm-2-1a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm5 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
+                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
                     clipRule="evenodd"
                   />
                 </svg>
@@ -86,7 +86,7 @@ const BottomBar = ({
           <li>
             <Link to="/profile">
               <ButtonBottomBar
-                value="Profile"
+                value="Profil"
                 currentTab={currentTab}
                 setCurrentTab={setCurrentTab}
               >
@@ -112,7 +112,7 @@ const BottomBar = ({
           <li>
             <Link to="/staff/my-orders">
               <ButtonBottomBar
-                value="My-orders"
+                value="Buyurtmalarim"
                 currentTab={currentTab}
                 setCurrentTab={setCurrentTab}
               >
@@ -137,31 +137,9 @@ const BottomBar = ({
             </Link>
           </li>
           <li>
-            <Link to="/staff/messages">
-              <ButtonBottomBar
-                value="Messages"
-                currentTab={currentTab}
-                setCurrentTab={setCurrentTab}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  className="size-6"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 3c-4.31 0-8 3.033-8 7 0 2.024.978 3.825 2.499 5.085a3.478 3.478 0 0 1-.522 1.756.75.75 0 0 0 .584 1.143 5.976 5.976 0 0 0 3.936-1.108c.487.082.99.124 1.503.124 4.31 0 8-3.033 8-7s-3.69-7-8-7Zm0 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm-2-1a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm5 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </ButtonBottomBar>
-            </Link>
-          </li>
-          <li>
             <Link to="/staff/profile">
               <ButtonBottomBar
-                value="Profile"
+                value="Profil"
                 currentTab={currentTab}
                 setCurrentTab={setCurrentTab}
               >
@@ -187,7 +165,7 @@ const BottomBar = ({
           <li>
             <Link to="/admin/dashboard">
               <ButtonBottomBar
-                value="dashboard"
+                value="Dashboard"
                 currentTab={currentTab}
                 setCurrentTab={setCurrentTab}
               >
@@ -205,7 +183,7 @@ const BottomBar = ({
           <li>
             <Link to="/admin/income">
               <ButtonBottomBar
-                value="incomes"
+                value="Daromad"
                 currentTab={currentTab}
                 setCurrentTab={setCurrentTab}
               >
@@ -254,7 +232,7 @@ const BottomBar = ({
           <li>
             <Link to="/admin/foods">
               <ButtonBottomBar
-                value="foods"
+                value="Mahsulotlar"
                 currentTab={currentTab}
                 setCurrentTab={setCurrentTab}
               >
@@ -277,7 +255,7 @@ const BottomBar = ({
           <li>
             <Link to="/admin/customers">
               <ButtonBottomBar
-                value="customers"
+                value="Mijozlar"
                 currentTab={currentTab}
                 setCurrentTab={setCurrentTab}
               >
@@ -303,7 +281,7 @@ const BottomBar = ({
             "
             >
               <ButtonBottomBar
-                value="employes"
+                value="Ishchilar"
                 currentTab={currentTab}
                 setCurrentTab={setCurrentTab}
               >

@@ -17,20 +17,20 @@ const OrderCard = ({
 }: OrderCardProps) => (
   <Link
     to={`/staff/my-order/${id}`}
-    className={`flex items-center rounded-md bg-white py-2 px-4  w-full ${status === "deliviring" ? "border-2 border-primary" : "border opacity-90"}`}
+    className={`flex items-center rounded-md bg-white py-2 px-4  w-full ${status === "delivering" ? "border-2 border-primary" : "border opacity-90"}`}
   >
     <StatusIcon status={status} />
     <div className="flex items-center w-full">
       <div>
         <h3 className="font-medium">{location}</h3>
         <p
-          className={`${status === "deliviring" ? "text-primary" : "text-gray-600"} font-bold text-sm`}
+          className={`${status === "delivering" ? "text-primary" : "text-gray-600"} font-bold text-sm`}
         >
           {total_price}
         </p>
       </div>
       <p
-        className={`ml-auto ${status === "deliviring" ? "text-primary" : "text-gray-600"} font-semibold`}
+        className={`ml-auto ${status === "delivering" ? "text-primary" : "text-gray-600"} font-semibold`}
       >
         {count}
       </p>
@@ -75,7 +75,7 @@ const StatusIcon = ({ status }: { status: string }) => {
       </div>
     );
   }
-  if (status === "deliviring") {
+  if (status === "delivering") {
     return (
       <div className="text-gray-400 pr-2">
         <svg

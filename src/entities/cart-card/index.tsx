@@ -22,8 +22,8 @@ const CartCard = () => {
       </div>
       <div className="flex flex-col gap-2 w-full">
         <div>
-          <h2 className="font-semibold text-lg">Burger With Meat</h2>
-          <p className="text-primary text-sm font-bold">$ 12,230</p>
+          <h2 className="font-semibold text-lg">Choyxona Oshi</h2>
+          <p className="text-primary text-sm font-bold">25,000 UZS</p>
         </div>
         <div className="flex justify-between w-full">
           <div className="flex items-center gap-2">
@@ -73,7 +73,7 @@ const CartCard = () => {
               </svg>
             </button>
           </div>
-          <button className="text-red-600">
+          <button className="text-red-600" aria-label="O‘chirish">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
