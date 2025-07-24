@@ -1,15 +1,15 @@
 import BottomBar from "@/widgets/bottombar";
 import { Link } from "react-router-dom";
 
-const OrderedPage = () => {
-  return (
-    <main>
-      <section className="p-4">
-        <p className="text-center font-semibold mt-5">Mening Buyurtmalarim</p>
 
-          <div className="mt-5 flex flex-col gap-4">
+const SalesPage = () => {
+  return (
+    <main className="p-4">
+      <h1 className=" text-center my-4 font-semibold">Buyurtmalar</h1>
+
+      <div className="mt-5 flex flex-col gap-4">
             {Array.from({ length: 4 }).map((_, i) => (
-              <Link key={i} to="/payment">
+              <Link key={i} to="/staff/my-orders">
               <div className="p-4 rounded-md shadow">
                 <div className="flex justify-between">
                   <h1 className="font-semibold text-lg">
@@ -29,10 +29,9 @@ const OrderedPage = () => {
             </Link>
             ))}
           </div>
-      </section>
-      <BottomBar currentPage="Buyurtmalarim" />
+      <BottomBar isForAdmin currentPage="orders" />
     </main>
   );
 };
 
-export default OrderedPage;
+export default SalesPage;

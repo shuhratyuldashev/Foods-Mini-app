@@ -1,7 +1,9 @@
 import img from "@/shared/assets/images/img-product-card.png";
 import HeaderFoodPage from "./ui/header-food-page";
+import { useState } from "react";
 
 const FoodPage = () => {
+  const [isActive, setIsActive] = useState<boolean>(false)
   return (
     <main className="p-4 flex flex-col gap-2">
       <HeaderFoodPage />
@@ -52,6 +54,14 @@ const FoodPage = () => {
           Choyxona oshi — milliy oshimizning klassik turi bo‘lib, ko‘pchilik
           tomonidan seviladi. Albatta, sinab ko‘rishga arziydi!
         </p>
+      </div>
+
+      <div className="mt-14">
+        {isActive ? (
+          <button onClick={() => setIsActive(!isActive)} className="rounded-full p-4 flex items-center justify-center bg-primary font-semibold w-full text-white">Taomni O'chirish</button>
+        ) : (
+          <button onClick={() => setIsActive(!isActive)} className="rounded-full p-4 flex items-center justify-center border-2 font-semibold w-full text-primary">Taomni Yoqish</button>
+        )}
       </div>
     </main>
   );

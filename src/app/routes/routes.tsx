@@ -25,7 +25,7 @@ import OrderPickUpPage from "@/pages/for-users-pages/order--pick-up-page ";
 import ChoosePlacePage from "@/pages/for-users-pages/choose-place-page";
 import DashboardPage from "@/pages/for-admins-page/dashboard-page";
 import IncomesPage from "@/pages/for-admins-page/incomes-page";
-import SalesPage from "@/pages/for-admins-page/sales-page";
+import OrdersPage from "@/pages/for-admins-page/orders-page";
 import FoodsListPage from "@/pages/for-admins-page/foods-list-page";
 import CustomersListPage from "@/pages/for-admins-page/customers-list-page";
 import UserPage from "@/pages/for-admins-page/user-page";
@@ -67,7 +67,7 @@ const AppRouter = () => {
 
         <Route path="/admin/dashboard" element={<DashboardPage />} />
         <Route path="/admin/income" element={<IncomesPage />} />
-        <Route path="/admin/sales" element={<SalesPage />} />
+        <Route path="/admin/orders" element={<OrdersPage />} />
         <Route path="/admin/foods" element={<FoodsListPage />} />
         <Route path="/admin/customers" element={<CustomersListPage />} />
         <Route path="/admin/employes" element={<EmployersListPage />} />

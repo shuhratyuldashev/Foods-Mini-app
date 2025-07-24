@@ -1,10 +1,13 @@
 import BottomBar from "@/widgets/bottombar";
 import ChartSales from "@/widgets/chart-sales";
 import { Link } from "react-router-dom";
-import { data_for_week } from "@/shared/constants/chart-data-constants";
+import { data_for_months, data_for_week } from "@/shared/constants/chart-data-constants";
 import { Separator } from "@/shared/ui/separator";
+import React from "react";
 
 const DashboardPage = () => {
+  const [isWeekly, setIsWeekly] = React.useState<boolean>(false);
+    
   return (
     <main className="p-4">
       <p className="font-semibold text-center my-4">Umummiy dashboard</p>
@@ -13,12 +16,24 @@ const DashboardPage = () => {
       <Separator className="my-4" />
 
       <div className="flex flex-col gap-4">
-        <p className="text-sm font-semibold">Haftalik sotuvlar</p>
-        <ChartSales weekly={data_for_week} isWeekly={true} />
-        <Link to="/admin/sales">
-          <div className="p-2 rounded-full text-white bg-primary flex justify-center font-semibold text-sm">
-            Batafsil
+        <div className="my-2 flex gap-2 p-1 rounded-md bg-gray-200 w-full">
+          <div
+            onClick={() => setIsWeekly(true)}
+            className={`font-semibold text-sm text-center w-full ${isWeekly ? "bg-white" : "text-gray-500"} rounded-md p-2`}
+          >
+            Haftalik
           </div>
+          <div
+            onClick={() => setIsWeekly(false)}
+            className={`font-semibold text-sm text-center w-full ${!isWeekly ? "bg-white" : "text-gray-500"} rounded-md p-2`}
+          >
+            Oylik
+          </div>
+        </div>
+
+        <p className="text-sm font-semibold">Haftalik sotuvlar</p>
+        <ChartSales mothsly={data_for_months} weekly={data_for_week} isWeekly={isWeekly} />
+        <Link to="/admin/sales">
         </Link>
       </div>
 

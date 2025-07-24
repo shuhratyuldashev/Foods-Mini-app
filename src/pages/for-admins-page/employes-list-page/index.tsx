@@ -2,6 +2,7 @@ import BottomBar from "@/widgets/bottombar";
 import CustomerCard from "@/entities/customer-card";
 import { employes_list } from "../../../shared/constants/employers-list";
 import HeaderEmployersPage from "./ui/header-customers-page";
+import EmployerCard from "@/entities/employer-card";
 
 const EmployersListPage = () => {
   return (
@@ -10,7 +11,7 @@ const EmployersListPage = () => {
 
       <section className="mt-5 flex-col flex gap-2">
         {employes_list.map((c) => (
-          <CustomerCard key={c.id} {...c} />
+          <EmployerCard key={c.id} {...c} />
         ))}
       </section>
       <BottomBar isForAdmin currentPage="Ishchilar" />
