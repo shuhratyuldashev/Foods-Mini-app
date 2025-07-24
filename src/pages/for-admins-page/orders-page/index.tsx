@@ -9,7 +9,7 @@ const SalesPage = () => {
 
       <div className="mt-5 flex flex-col gap-4">
             {Array.from({ length: 4 }).map((_, i) => (
-              <Link key={i} to="/staff/my-orders/1">
+              <Link key={i} to="/staff/my-order/1">
               <div className="p-4 rounded-md shadow">
                 <div className="flex justify-between">
                   <h1 className="font-semibold text-lg">
