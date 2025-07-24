@@ -11,7 +11,7 @@ interface CustomerCardProps {
 const EmployerCard = ({ id, avatar, user_name, phone, role }: CustomerCardProps) => {
   return (
     <Link
-      to={`/user/${id}`}
+      to={`/employer/${id}`}
       className="flex gap-2 p-2 bg-gray-100 border rounded-md"
     >
       <div className="w-10 aspect-square rounded-full">
