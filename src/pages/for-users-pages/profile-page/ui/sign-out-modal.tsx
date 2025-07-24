@@ -1,4 +1,5 @@
 import Modal from "@/shared/ui/modal";
+import { Link } from "react-router-dom";
 
 const SignOutModal = ({
   handleClose,
@@ -18,9 +19,11 @@ const SignOutModal = ({
       >
         Bekor qilish
       </button>
-      <button className="p-3 w-1/2 flex items-center gap-2 justify-center rounded-full bg-primary text-white">
+      <Link className="w-1/2" to="/sign-in">
+      <button className="p-3 w-full flex items-center gap-2 justify-center rounded-full bg-primary text-white">
         Chiqish
       </button>
+      </Link>
     </div>
   </Modal>
 );
