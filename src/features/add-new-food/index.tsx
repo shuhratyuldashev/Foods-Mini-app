@@ -11,7 +11,7 @@ import AddNewFoodForm from "./ui/add-new-food-form";
 
 interface DrawerAddNewFoodProps {
   type: "post" | "put";
-  initialData?: Partial<FoodFormData>;
+  initialData?: any;
   foodId?: string;
 }
 

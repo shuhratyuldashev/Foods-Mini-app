@@ -39,7 +39,12 @@ const HeaderFoodPage = ({ id }: { id: string }) => {
         </button>
       </Link>
       <div className="flex gap-2">
-        <DrawerAddNewFood initialData={product} type="put" foodId={id} />
+        <DrawerAddNewFood
+            initialData={product ?? undefined}
+            type="put"
+            foodId={id}
+          />
+
         <button
           onClick={() => setIsDeleteModalOpen(true)}
           className="p-2 border rounded-full text-red-600"

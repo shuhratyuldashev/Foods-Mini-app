@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import { Product } from "@/shared/types/types";
 import { fetchProduct, fetchRecommendations } from "../lib/cart-handlers";
 
-
-export const useFetchProduct = (id: string) => {
-  const [product, setProduct] = useState<Product | null>(null);
+export const useFetchProduct = (id?: string) => {
+  const [product, setProduct] = useState<Product | undefined>(undefined);
 
   useEffect(() => {
     if (!id) return;
@@ -12,7 +11,7 @@ export const useFetchProduct = (id: string) => {
     const fetchData = async () => {
       try {
         const prod = await fetchProduct(id);
-        setProduct(prod);
+        setProduct(prod || undefined);
       } catch (e) {
         console.error("Failed to fetch product:", e);
       }
@@ -33,7 +32,7 @@ export const useFetchRecommendations = (categoryId?: string) => {
     const fetchData = async () => {
       try {
         const recs = await fetchRecommendations(categoryId);
-        setRecommendations(recs);
+        setRecommendations(recs || []);
       } catch (e) {
         console.error("Failed to fetch recommendations:", e);
       }

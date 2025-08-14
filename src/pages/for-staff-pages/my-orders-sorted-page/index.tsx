@@ -1,7 +1,7 @@
 import OrderCard from "@/entities/order-card";
 import HeaderMyOrdersSortedPage from "./ui/header-my-orders-sorted-page";
 import { useParams } from "react-router-dom";
-import { orders_list_consts } from "../my-orders-page/constants/orders_list_consts";
+import { Order } from "@/shared/types/types";
 
 const MyOrdersSortedPage = () => {
   const { type } = useParams<string>();
@@ -11,9 +11,9 @@ const MyOrdersSortedPage = () => {
       <HeaderMyOrdersSortedPage type={`${type}`} />
 
       <div className="flex flex-col mt-5 gap-3">
-        {orders_list_consts.map((o) => (
-          <OrderCard key={o.id} {...o} status={String(type) || "completed"} />
-        ))}
+        {/* {orders_list_consts.map((o: Order) => (
+          <OrderCard order={o} key={o.id} {...o} />
+        ))} */}
       </div>
     </main>
   );

@@ -18,11 +18,11 @@ const MyOrdersPage = () => {
           canceled_orders={5}
           completed_orders={18}
         />
-        <div className="flex flex-col gap-3">
+        {/* <div className="flex flex-col gap-3">
           {orders_list_consts.map((o) => (
             <OrderCard key={o.id} {...o} />
           ))}
-        </div>
+        </div> */}
       </section>
       <BottomBar isForStaff currentPage="Buyurtmalarim" />
     </main>
