@@ -1,11 +1,9 @@
+import { Category } from "@/shared/types/types";
+
 interface CategoryCardProps {
-  setCurrentCategory: (id: number) => void;
-  currentCategory: number;
-  category: {
-    id: number;
-    name: string;
-    img: string;
-  };
+  setCurrentCategory: (id: string) => void;
+  currentCategory: string;
+  category: Category;
 }
 
 const CategoryCard = ({
@@ -15,10 +13,13 @@ const CategoryCard = ({
 }: CategoryCardProps) => (
   <li
     onClick={() => setCurrentCategory(category.id)}
-    className={`px-4 py-2 shadow ${currentCategory === category.id ? "bg-primary text-white" : "text-gray-400 bg-white"} text-sm font-medium rounded-md flex flex-col items-center justify-center gap-2 transition duration-500 active:scale-90 max-w-[60px]`}
-    key={category.id}
+    className={`px-4 py-2 shadow-slate-100 shadow ${
+      currentCategory === category.id
+        ? "bg-primary text-white"
+        : "text-gray-400 bg-white"
+    } text-sm font-medium rounded-md flex flex-col items-center justify-center gap-2 transition duration-500 active:scale-90`}
   >
-    <img src={category.img} alt={category.name} />
+    {category.image && <img src={category.image} alt={category.name} />}
     <p>{category.name}</p>
   </li>
 );

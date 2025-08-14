@@ -1,13 +1,21 @@
 import BottomBar from "@/widgets/bottombar";
 import ChartSales from "@/widgets/chart-sales";
 import { Link } from "react-router-dom";
-import { data_for_months, data_for_week } from "@/shared/constants/chart-data-constants";
+import {
+  data_for_months,
+  data_for_week,
+} from "@/shared/constants/chart-data-constants";
 import { Separator } from "@/shared/ui/separator";
 import React from "react";
+import { useFetchProducts } from "@/shared/hooks/useFoods";
+import { useFetchEmployees } from "@/shared/hooks/useEmployees";
 
 const DashboardPage = () => {
   const [isWeekly, setIsWeekly] = React.useState<boolean>(false);
-    
+
+  const products = useFetchProducts();
+  const { employees } = useFetchEmployees();
+
   return (
     <main className="p-4">
       <p className="font-semibold text-center my-4">Umummiy dashboard</p>
@@ -32,9 +40,12 @@ const DashboardPage = () => {
         </div>
 
         <p className="text-sm font-semibold">Haftalik sotuvlar</p>
-        <ChartSales mothsly={data_for_months} weekly={data_for_week} isWeekly={isWeekly} />
-        <Link to="/admin/sales">
-        </Link>
+        <ChartSales
+          mothsly={data_for_months}
+          weekly={data_for_week}
+          isWeekly={isWeekly}
+        />
+        <Link to="/admin/sales"></Link>
       </div>
 
       <Separator className="my-4" />
@@ -47,7 +58,7 @@ const DashboardPage = () => {
           <p className="text-sm font-semibold text-gray-600">
             Mahsulotlar ro'yxati:
           </p>
-          <span className="font-bold text-primary">5</span>
+          <span className="font-bold text-primary">{products.length}</span>
         </Link>
         <Link
           to="/admin/customers"
@@ -65,7 +76,7 @@ const DashboardPage = () => {
           <p className="text-sm font-semibold text-gray-600">
             Ishchilar ro'yxati:
           </p>
-          <span className="font-bold text-primary">5</span>
+          <span className="font-bold text-primary">{employees.length}</span>
         </Link>
       </div>
       <Separator className="my-8" />

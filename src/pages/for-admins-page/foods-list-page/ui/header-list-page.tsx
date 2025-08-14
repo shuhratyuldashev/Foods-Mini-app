@@ -1,82 +1,13 @@
-import {
-  Drawer,
-  DrawerContent,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/shared/ui/drawer";
+import DrawerAddNewCategory from "@/features/add-new-category";
+import DrawerAddNewFood from "@/features/add-new-food";
 
 const HeaderFoodsListPage = () => {
   return (
     <header className="flex items-center flex-col gap-2 mt-5">
       <p className="font-semibold">Mahsulotlar ro'yxati</p>
-      <DrawerAddNewFood />
+      <DrawerAddNewFood type="post" />
     </header>
   );
 };
-
-const DrawerAddNewFood = () => (
-  <Drawer>
-    <DrawerTrigger className="border text-sm w-full p-4 rounded-full font-semibold">
-      Yangi mahsulot qo'shish
-    </DrawerTrigger>
-    <DrawerContent>
-      <DrawerHeader>
-        <DrawerTitle>Yangi mahsulot qo'shish</DrawerTitle>
-      </DrawerHeader>
-      <main className="p-4">
-        <form className="flex flex-col gap-2">
-          <div>
-            <label htmlFor="title" className="font-semibold text-sm">
-              Sarlavha
-            </label>
-            <input
-              placeholder="Title"
-              id="title"
-              type="text"
-              className="p-2 border rounded-md w-full outline-none focus:ring-3 ring-gray-300"
-            />
-          </div>
-          <div>
-            <label htmlFor="image" className="font-semibold text-sm">
-              Rasm
-            </label>
-            <input
-              placeholder="Image"
-              type="file"
-              id="image"
-              className="p-2 border rounded-md w-full outline-none focus:ring-3 ring-gray-300"
-            />
-          </div>
-          <div>
-            <label htmlFor="price" className="font-semibold text-sm">
-              Narxi
-            </label>
-            <input
-              placeholder="Price"
-              type="number"
-              id="price"
-              className="p-2 border rounded-md w-full outline-none focus:ring-3 ring-gray-300"
-            />
-          </div>
-          <div>
-            <label htmlFor="description" className="font-semibold text-sm">
-              Tafsiv
-            </label>
-            <textarea
-              placeholder="Description"
-              id="description"
-              className="p-2 border rounded-md w-full outline-none focus:ring-3 ring-gray-300"
-            />
-          </div>
-
-          <button className="mt-2 bg-primary p-4 font-semibold text-white text-sm rounded-full">
-            Yangi mahsulot qo'shish
-          </button>
-        </form>
-      </main>
-    </DrawerContent>
-  </Drawer>
-);
 
 export default HeaderFoodsListPage;

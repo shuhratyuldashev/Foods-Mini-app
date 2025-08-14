@@ -1,65 +1,101 @@
+import { Link } from "react-router-dom";
 import BottomBar from "@/widgets/bottombar";
 import HeaderFoodsListPage from "./ui/header-list-page";
-import { Link } from "react-router-dom";
-import { foods_list } from "@/shared/constants/foods-list";
+import { Category, Product } from "@/shared/types/types";
+import DrawerAddNewCategory from "@/features/add-new-category";
+import { useFetchCategories, useFetchProducts } from "@/shared/hooks/useFoods";
+import axios from "@/shared/axios";
 
 const FoodsListPage = () => {
+  const products = useFetchProducts();
+  const categories = useFetchCategories();
+
+  const handleDeleteCategory = async (id: string) => {
+    try {
+      console.log(id);
+      await axios.delete(`/food/categories/${id}/`);
+    } catch (error) {
+      console.error("Delete failed:", error);
+    }
+  };
+
   return (
     <main className="p-4">
       <HeaderFoodsListPage />
+
       <section className="mt-4 flex flex-col gap-2">
-        {foods_list.map((f) => (
+        {products?.map((f) => (
           <FoodCard key={f.id} {...f} />
         ))}
       </section>
+
+      <section className="mt-8 my-20 flex flex-col gap-2">
+        <DrawerAddNewCategory type="post" />
+        {categories?.map((c: Category) => (
+          <div
+            key={c.id}
+            className="w-full px-4 py-2 flex items-center justify-between border rounded-md"
+          >
+            <p className="font-semibold text-sm">{c.name}</p>
+            <div className="flex gap-2">
+              <DrawerAddNewCategory categoryId={c.id} type="put" />
+              <button
+                onClick={() => handleDeleteCategory(c.id)}
+                className="p-2 border rounded-full text-primary"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="size-5"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M16.5 4.478v.227a48.816 48.816 0 0 1 3.878.512.75.75 0 1 1-.256 1.478l-.209-.035-1.005 13.07a3 3 0 0 1-2.991 2.77H8.084a3 3 0 0 1-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 0 1-.256-1.478A48.567 48.567 0 0 1 7.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 0 1 3.369 0c1.603.051 2.815 1.387 2.815 2.951ZM10.364 3.026a51.196 51.196 0 0 1 3.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 0 0-6 0v-.113c0-.794.609-1.428 1.364-1.452Zm-.355 5.945a.75.75 0 1 0-1.5.058l.347 9a.75.75 0 1 0 1.499-.058l-.346-9Zm5.48.058a.75.75 0 1 0-1.498-.058l-.347 9a.75.75 0 0 0 1.5.058l.345-9Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        ))}
+      </section>
+
       <BottomBar isForAdmin currentPage="Mahsulotlar" />
     </main>
   );
 };
 
-export const FoodCard = ({
-  id,
-  img,
-  title,
-  rating,
-  price,
-}: {
-  id: number;
-  img: string;
-  title: string;
-  rating: number;
-  price: string;
-}) => (
-  <Link
-    to={`/foods/${id}`}
-    className="p-2 flex items-center gap-2 rounded-md w-full border"
-  >
-    <div className="w-16 aspect-square">
-      <img src={img} className="rounded-md object-cover w-full h-full" alt="" />
-    </div>
-    <div>
-      <h1 className="font-semibold">{title}</h1>
-      <p className="font-bold text-gray-500 text-sm">
-        <div className="flex gap-2">
-          <span className="text-primary">{price}</span>/{" "}
-          <span className="text-primary flex gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="size-5"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-                clipRule="evenodd"
-              />
-            </svg>
-            {rating}
-          </span>
+export const FoodCard = ({ id, image, name, category, price }: Product) => {
+  const formattedPrice = price.toLocaleString();
+
+  return (
+    <Link
+      to={`/foods/${id}`}
+      className="p-2 flex items-center gap-3 rounded-md w-full border border-slate-100 transition"
+    >
+      <div className="w-16 aspect-square shrink-0">
+        {image ? (
+          <img
+            src={`http://192.168.0.127:8090/media/images/${image}`}
+            alt={name}
+            className="rounded-md object-cover w-full h-full"
+          />
+        ) : (
+          <div className="w-full h-full rounded-md bg-gray-200 flex items-center justify-center text-xs text-gray-500">
+            No Image
+          </div>
+        )}
+      </div>
+      <div className="flex flex-col justify-center">
+        <h2 className="font-semibold text-base">{name}</h2>
+        <div className="flex gap-2 text-sm text-gray-500">
+          <span className="text-primary font-bold">{formattedPrice} UZS</span>
+          <span>/ {category?.name}</span>
         </div>
-      </p>
-    </div>
-  </Link>
-);
+      </div>
+    </Link>
+  );
+};
+
 export default FoodsListPage;

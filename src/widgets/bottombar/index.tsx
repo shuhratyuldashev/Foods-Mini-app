@@ -15,7 +15,7 @@ const BottomBar = ({
 
   if (!isForStaff && !isForAdmin) {
     return (
-      <section className="sticky bottom-0 bg-white left-0 right-0 z-10 shadow-2xl rounded-t-4xl">
+      <section className="fixed bottom-0 bg-white left-0 right-0 z-10 shadow-2xl rounded-t-4xl">
         <ul className="flex w-full items-center justify-evenly p-4">
           <li>
             <Link to="/">
@@ -209,7 +209,7 @@ const BottomBar = ({
                 currentTab={currentTab}
                 setCurrentTab={setCurrentTab}
               >
-                 <svg
+                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"

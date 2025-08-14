@@ -1,6 +1,28 @@
+import React from "react";
+import axios from "@/shared/axios";
 import img_no_result from "@/shared/assets/images/no-results-img.png";
+import { Product } from "@/shared/types/types";
+import { Link } from "react-router-dom";
 
 const SearchPage = () => {
+  const [query, setQuery] = React.useState("");
+  const [results, setResults] = React.useState([]);
+
+  React.useEffect(() => {
+    const delayDebounce = setTimeout(() => {
+      if (query.trim()) {
+        axios
+          .get("/food/items/", { params: { name: query } })
+          .then((res) => setResults(res.data?.results || []))
+          .catch((err) => console.error(err));
+      } else {
+        setResults([]);
+      }
+    }, 400); 
+
+    return () => clearTimeout(delayDebounce);
+  }, [query]);
+
   return (
     <main className="p-4">
       <h1 className="text-4xl mt-5 font-bold">
@@ -10,7 +32,8 @@ const SearchPage = () => {
 
       <form className="mt-10">
         <div className="flex gap-2 border rounded-md focus-within:ring-3 focus-within:ring-gray-300 transition">
-          <button className="p-3">
+          <button type="button" className="p-3">
+            {/* 🔍 SVG Icon */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -24,31 +47,37 @@ const SearchPage = () => {
               />
             </svg>
           </button>
+
           <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
             type="text"
             className="h-full w-full py-3 outline-none"
             placeholder="Qidirish..."
           />
-          <button className="p-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="size-6"
-            >
-              <path d="M6 12a.75.75 0 0 1-.75-.75v-7.5a.75.75 0 1 1 1.5 0v7.5A.75.75 0 0 1 6 12ZM18 12a.75.75 0 0 1-.75-.75v-7.5a.75.75 0 0 1 1.5 0v7.5A.75.75 0 0 1 18 12ZM6.75 20.25v-1.5a.75.75 0 0 0-1.5 0v1.5a.75.75 0 0 0 1.5 0ZM18.75 18.75v1.5a.75.75 0 0 1-1.5 0v-1.5a.75.75 0 0 1 1.5 0ZM12.75 5.25v-1.5a.75.75 0 0 0-1.5 0v1.5a.75.75 0 0 0 1.5 0ZM12 21a.75.75 0 0 1-.75-.75v-7.5a.75.75 0 0 1 1.5 0v7.5A.75.75 0 0 1 12 21ZM3.75 15a2.25 2.25 0 1 0 4.5 0 2.25 2.25 0 0 0-4.5 0ZM12 11.25a2.25 2.25 0 1 1 0-4.5 2.25 2.25 0 0 1 0 4.5ZM15.75 15a2.25 2.25 0 1 0 4.5 0 2.25 2.25 0 0 0-4.5 0Z" />
-            </svg>
-          </button>
         </div>
       </form>
 
-      <section className="flex flex-col items-center mt-10">
-        <img src={img_no_result} alt="img_no_result" />
-        <p className="text-gray-400 text-center">
-          Iltimos, yozuvda xatolik yo‘qligini tekshiring yoki boshqa so‘z
-          kiriting.
-        </p>
-      </section>
+      {results.length > 0 ? (
+        <ul className="mt-10 grid gap-4">
+          {results.map((item: Product) => (
+           <Link key={item.id} to={`/products/${item.id}`}>
+            <li className="border p-4 rounded">
+              <p>{item.name}</p>
+              <p>{item.price} so‘m</p>
+            </li>
+            </Link>
+          ))}
+        </ul>
+      ) : (
+        <section className="flex flex-col items-center mt-10">
+          <img src={img_no_result} alt="img_no_result" />
+          <p className="text-gray-400 text-center">
+            Iltimos, yozuvda xatolik yo‘qligini tekshiring yoki boshqa so‘z
+            kiriting.
+          </p>
+        </section>
+      )}
     </main>
   );
 };

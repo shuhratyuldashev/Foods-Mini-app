@@ -1,31 +1,44 @@
 import bg from "@/shared/assets/images/bg-home.png";
 import BottomBar from "@/widgets/bottombar";
 import HeroHomePage from "./ui/hero-home-page";
-import { useState } from "react";
 import CategoriesList from "./ui/categories-list";
-import { products_categories } from "./constants/products-categories-list";
 import ProductsList from "./ui/products-list";
+import React from "react";
+import { useFetchCategories, useFetchProducts } from "@/shared/hooks/useFoods";
 
 const ProductsPage = () => {
-  const [currentCategory, setCurrentCategory] = useState<number>(1);
+  const [currentCategory, setCurrentCategory] = React.useState<string>("");
+
+  const products = useFetchProducts(currentCategory);
+  const categories = useFetchCategories();
 
   return (
     <main className="bg-[radial-gradient(circle_at_left,_rgba(255,165,0,0.3)_0%,_white_25%)]">
       <HeroHomePage bg={bg} />
+
       <section className="p-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mb-2">
           <p className="font-semibold text-lg">Turkumlar bo‘yicha</p>
-          <span className="font-medium text-primary">Hammasi</span>
+          <span
+            className="font-medium text-primary cursor-pointer"
+            onClick={() => setCurrentCategory("")}
+          >
+            Hammasi
+          </span>
         </div>
 
         <CategoriesList
-          products_categories={products_categories}
-          setCurrentCategory={setCurrentCategory}
+          categories={categories}
           currentCategory={currentCategory}
+          setCurrentCategory={(id) => {
+            const newCategory = id === currentCategory ? "" : id;
+            setCurrentCategory(newCategory);
+          }}
         />
 
-        <ProductsList count={8} />
+        <ProductsList data={products} />
       </section>
+
       <BottomBar currentPage="Bosh sahifa" />
     </main>
   );

@@ -1,22 +1,23 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const HeaderProductPage = ({
-  currentPhoto,
-  setCurrentPhoto,
-  imgs,
+  img,
 }: {
-  currentPhoto: number;
-  setCurrentPhoto: (i: number) => void;
-  imgs: string[];
+  img: string | null;
 }) => {
   return (
     <header className="min-h-[280px] max-h-[300px] mt-5 rounded-md relative text-white">
-      <img
-        className="absolute h-full top-0 rounded-md left-0 bottom-0 right-0 w-full object-cover z-[0]"
-        src={imgs[currentPhoto]}
-        alt=""
-      />
+      {img ? (
+        <img
+          className="absolute h-full top-0 rounded-md left-0 bottom-0 right-0 w-full object-cover z-[0]"
+          src={`http://192.168.0.127:8090/media/images/${img}`}
+          alt=""
+        />
+      ) : (
+        <div className="bg-gray-200 text-black flex items-center justify-center absolute h-full top-0 rounded-md left-0 bottom-0 right-0 w-full object-cover z-[0]">
+          Not Image
+        </div>
+      )}
       <div className="top-0 bottom-0 right-0 left-0 p-4 flex flex-col justify-between absolute z-10">
         <nav className="flex relative justify-center">
           <Link to="/">
@@ -39,17 +40,6 @@ const HeaderProductPage = ({
           </Link>
           <p className="font-semibold text-lg">Bu mahsulot haqida</p>
         </nav>
-        <div className="flex w-[35%] mx-auto justify-center items-center gap-2 mt-4 py-2">
-          {imgs.map((_, index) => (
-            <div
-              onClick={() => setCurrentPhoto(index)}
-              key={index}
-              className={`${
-                currentPhoto === index ? "bg-primary" : "bg-white"
-              } h-1 max-w-full min-w-1/3 rounded transition-colors duration-300`}
-            />
-          ))}
-        </div>
       </div>
     </header>
   );

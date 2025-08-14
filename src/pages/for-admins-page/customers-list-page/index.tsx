@@ -2,6 +2,7 @@ import BottomBar from "@/widgets/bottombar";
 import HeaderCustomersPage from "./ui/header-customers-page";
 import CustomerCard from "@/entities/customer-card";
 import { customers_list } from "../../../shared/constants/customers-list";
+import React from "react";
 
 const CustomersListPage = () => {
   return (

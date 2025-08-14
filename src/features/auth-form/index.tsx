@@ -20,7 +20,7 @@ const SignInForm = () => (
     <div className="flex flex-col gap-2">
       <label className="font-semibold">Telefon raqami</label>
       <input
-        type="number"
+        type="tel"
         className="p-3 border rounded outline-none focus:ring-3 focus:ring-gray-300 transition"
         placeholder="+998 99 999 99 99"
       />
@@ -60,7 +60,7 @@ const SignUpForm = () => (
     <div className="flex flex-col gap-2">
       <label className="font-semibold">Telefon raqami</label>
       <input
-        type="number"
+        type="tel"
         className="p-3 border rounded outline-none focus:ring-3 focus:ring-gray-300 transition"
         placeholder="+998 99 999 99 99"
       />

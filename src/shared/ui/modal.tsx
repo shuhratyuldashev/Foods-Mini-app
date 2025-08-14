@@ -38,10 +38,10 @@ const ModalHeader = ({
   handleClose: () => void;
 }) => (
   <header className="flex relative justify-center p-2">
-    <h1 className="font-semibold text-2xl">{title}</h1>
+    <h1 className="font-semibold text-xl">{title}</h1>
     <button
       onClick={handleClose}
-      className="p-1 absolute right-0 rounded-md border"
+      className="p-1 bg-white absolute right-0 rounded-md border"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
