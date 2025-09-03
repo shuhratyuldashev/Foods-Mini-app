@@ -1,8 +1,6 @@
 import BottomBar from "@/widgets/bottombar";
 import HeaderEmployersPage from "./ui/header-customers-page";
 import EmployerCard from "@/entities/employer-card";
-import React from "react";
-import axios from "@/shared/axios";
 import { Employer } from "@/shared/types/types";
 import { useFetchEmployees } from "@/shared/hooks/useEmployees";
 
