@@ -1,6 +1,41 @@
 import { Drawer, DrawerContent, DrawerTrigger } from "@/shared/ui/drawer";
+import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
+import { useState } from "react";
+import "leaflet/dist/leaflet.css";
 
 const ChooseLocationDrawer = () => {
+  const [position, setPosition] = useState<[number, number] | null>(null);
+  const defaultCenter: [number, number] = [41.3111, 69.2797];
+
+  function LocationMarker() {
+    useMapEvents({
+      click(e) {
+        setPosition([e.latlng.lat, e.latlng.lng]);
+      },
+    });
+
+    return position === null ? null : <Marker position={position}></Marker>;
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!position) return alert("Iltimos, manzil tanlang!");
+
+    // backendga yuborish
+    const userId = localStorage.getItem("user_id");
+    const res = await fetch(`/v1/order/customers/${userId}/`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        latitude: position[0],
+        longitude: position[1],
+      }),
+    });
+
+    const data = await res.json();
+    console.log("Address API javobi:", data);
+  };
+
   return (
     <Drawer>
       <DrawerTrigger className="w-full">
@@ -24,40 +59,35 @@ const ChooseLocationDrawer = () => {
           </div>
         </div>
       </DrawerTrigger>
+
       <DrawerContent className="p-4">
-        <form className="mt-10">
-          <div className="flex gap-2 border rounded-md focus-within:ring-3 focus-within:ring-gray-300 transition">
-            <button className="p-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="size-5"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </button>
+        <form onSubmit={handleSubmit} className="mt-10">
+          <div className="flex gap-2 border rounded-md">
             <input
               type="text"
-              className="h-full w-full py-3 outline-none"
+              className="h-full w-full py-3 outline-none px-2"
               placeholder="Qidirish..."
             />
           </div>
 
-          <div className="my-4">
-            <iframe
-              src="https://yandex.com/map-widget/v1/?um=constructor%3Aabcdef1234567890"
-              width="100%"
-              height="400"
-              title="Xarita"
-            ></iframe>
+          <div className="my-4 h-[400px]">
+            <MapContainer
+              center={defaultCenter} // Tashkent default
+              zoom={12}
+              style={{ height: "100%", width: "100%" }}
+            >
+              <TileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution="&copy; OpenStreetMap contributors"
+              />
+              <LocationMarker />
+            </MapContainer>
           </div>
 
-          <button className="p-4 rounded-full bg-primary text-white text-sm font-semibold w-full">
+          <button
+            type="submit"
+            className="p-4 rounded-full bg-primary text-white text-sm font-semibold w-full"
+          >
             Tasdiqlash
           </button>
         </form>
