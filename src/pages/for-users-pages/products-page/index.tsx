@@ -11,6 +11,7 @@ const ProductsPage = () => {
 
   const products = useFetchProducts(currentCategory);
   const categories = useFetchCategories();
+  const route = window.location.pathname;
 
   return (
     <main className="bg-[radial-gradient(circle_at_left,_rgba(255,165,0,0.3)_0%,_white_25%)]">
@@ -23,11 +24,16 @@ const ProductsPage = () => {
             className="font-medium text-primary cursor-pointer"
             // onClick={() => setCurrentCategory("")}
             onClick={() => {
-              window.open("http://192.168.0.180:5173/",); // yangi tabda ochiladi
+              window.open("http://192.168.0.180:5173/", "_blank"); // yangi tabda ochiladi
             }}
-
           >
             Hammasi
+          </span>
+        </div>
+        {/* Routelarni ko'rsatish uchun */}
+        <div className="mb-4">
+          <span className="text-gray-500 text-sm">
+            {route}
           </span>
         </div>
 
