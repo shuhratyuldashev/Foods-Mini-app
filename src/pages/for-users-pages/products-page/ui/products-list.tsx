@@ -21,7 +21,7 @@ const ProductCard = ({ id, name, price, image }: Product) => {
         {image ? (
           <img
             className="rounded object-cover w-full max-h-[120px] bg-gray-100"
-            src={`http://192.168.0.127:8090/media/images/${image}`}
+            src={`${import.meta.env.VITE_MEDIA_URL}/media/images/${image}`}
             alt="IMAGE"
           />
         ) : (

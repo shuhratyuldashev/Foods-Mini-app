@@ -21,7 +21,11 @@ const ProductsPage = () => {
           <p className="font-semibold text-lg">Turkumlar bo‘yicha</p>
           <span
             className="font-medium text-primary cursor-pointer"
-            onClick={() => setCurrentCategory("")}
+            // onClick={() => setCurrentCategory("")}
+            onClick={() => {
+              window.open("http://192.168.0.180:5173/",); // yangi tabda ochiladi
+            }}
+
           >
             Hammasi
           </span>

@@ -26,7 +26,7 @@ const FoodPage = () => {
         <div className="w-full aspect-square">
           {product.image ? (
             <img
-              src={`http://192.168.0.127:8090/media/images/${product.image}`}
+              src={`/media/images/${product.image}`}
               className="rounded-md w-full h-full object-cover"
               alt={product.name}
             />
@@ -68,11 +68,10 @@ const FoodPage = () => {
       <div className="mt-14">
         <button
           onClick={() => setIsActive(!isActive)}
-          className={`rounded-full p-4 flex items-center justify-center w-full font-semibold transition ${
-            isActive
+          className={`rounded-full p-4 flex items-center justify-center w-full font-semibold transition ${isActive
               ? "bg-primary text-white"
               : "border-2 border-primary text-primary"
-          }`}
+            }`}
         >
           {isActive ? "Taomni Oʻchirish" : "Taomni Yoqish"}
         </button>

@@ -22,12 +22,12 @@ export const option_list = [
         link: "/profile/settings",
         icon: settings_icon,
       },
-      {
-        id: 3,
-        title: "Qo‘shimcha karta", // "Extra Card"
-        link: "/profile/extra-card",
-        icon: card_icon,
-      },
+      // {
+      //   id: 3,
+      //   title: "Qo‘shimcha karta", // "Extra Card"
+      //   link: "/profile/extra-card",
+      //   icon: card_icon,
+      // },
     ],
   },
   {
@@ -37,21 +37,21 @@ export const option_list = [
       {
         id: 4,
         title: "Yordam markazi", // "Help center"
-        link: "/profile/help-center",
+        link: "tel:+998901234567",
         icon: info_icon,
       },
-      {
-        id: 5,
-        title: "Profilni o‘chirish",
-        link: "function_to_delete",
-        icon: delete_icon,
-      },
-      {
-        id: 6,
-        title: "Yangi hisob qo‘shish",
-        link: "function_to_add",
-        icon: add_account_icon,
-      },
+      // {
+      //   id: 5,
+      //   title: "Profilni o‘chirish",
+      //   link: "function_to_delete",
+      //   icon: delete_icon,
+      // },
+      // {
+      //   id: 6,
+      //   title: "Yangi hisob qo‘shish",
+      //   link: "function_to_add",
+      //   icon: add_account_icon,
+      // },
     ],
   },
 ];

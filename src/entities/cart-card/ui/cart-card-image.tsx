@@ -8,7 +8,7 @@ const CartCardImage = ({
   <div className="w-20 aspect-square">
     {image ? (
       <img
-        src={`http://192.168.0.127:8090/media/images/${image}`}
+        src={`${import.meta.env.VITE_MEDIA_URL}/media/images/${image}`}
         className="object-cover w-full h-full rounded"
         alt={name}
       />

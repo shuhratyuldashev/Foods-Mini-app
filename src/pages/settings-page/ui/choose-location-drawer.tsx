@@ -1,5 +1,4 @@
 import { Drawer, DrawerContent, DrawerTrigger } from "@/shared/ui/drawer";
-import React from "react";
 
 const ChooseLocationDrawer = () => {
   return (

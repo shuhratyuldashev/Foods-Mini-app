@@ -13,15 +13,15 @@ const SettingsPage = () => {
       <section className="mt-5 flex flex-col gap-3">
         <p className="font-semibold text-gray-400 text-sm">Akaunt</p>
 
-        <div className="flex justify-between">
+        {/* <div className="flex justify-between">
           <p className="font-semibold text-base">Xabarlarni yoqish</p>
           <Switch className="scale-110" />
-        </div>
+        </div> */}
         <ChooseLocationDrawer />
-        <ChooseLanguageDrawer
+        {/* <ChooseLanguageDrawer
           currentLanguage={currentLanguage}
           setCurrentLanguage={setCurrentLanguage}
-        />
+        /> */}
 
         <p className="font-semibold text-gray-400 text-sm mt-4">Boshqa</p>
         <div className="flex justify-between items-center">

@@ -77,7 +77,7 @@ export const FoodCard = ({ id, image, name, category, price }: Product) => {
       <div className="w-16 aspect-square shrink-0">
         {image ? (
           <img
-            src={`http://192.168.0.127:8090/media/images/${image}`}
+            src={`${import.meta.env.VITE_MEDIA_URL}/media/images/${image}`}
             alt={name}
             className="rounded-md object-cover w-full h-full"
           />

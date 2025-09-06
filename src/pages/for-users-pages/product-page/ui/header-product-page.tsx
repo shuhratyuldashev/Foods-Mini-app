@@ -10,7 +10,7 @@ const HeaderProductPage = ({
       {img ? (
         <img
           className="absolute h-full top-0 rounded-md left-0 bottom-0 right-0 w-full object-cover z-[0]"
-          src={`http://192.168.0.127:8090/media/images/${img}`}
+          src={`${import.meta.env.VITE_MEDIA_URL}/media/images/${img}`}
           alt=""
         />
       ) : (
