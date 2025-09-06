@@ -5,14 +5,16 @@ import CategoriesList from "./ui/categories-list";
 import ProductsList from "./ui/products-list";
 import React from "react";
 import { useFetchCategories, useFetchProducts } from "@/shared/hooks/useFoods";
+import { useLocation, useParams } from "react-router-dom";
 
 const ProductsPage = () => {
   const [currentCategory, setCurrentCategory] = React.useState<string>("");
 
   const products = useFetchProducts(currentCategory);
   const categories = useFetchCategories();
-  const route = window.location.pathname;
-
+  const params = useParams(); // masalan: { id: "123" }
+  const location = useLocation();
+  console.log(params, location);
   return (
     <main className="bg-[radial-gradient(circle_at_left,_rgba(255,165,0,0.3)_0%,_white_25%)]">
       <HeroHomePage bg={bg} />
@@ -33,7 +35,7 @@ const ProductsPage = () => {
         {/* Routelarni ko'rsatish uchun */}
         <div className="mb-4">
           <span className="text-gray-500 text-sm">
-            {route}
+            Path: {location.pathname} | Params: {JSON.stringify(params)}
           </span>
         </div>
 
