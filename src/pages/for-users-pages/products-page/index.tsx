@@ -19,6 +19,9 @@ const ProductsPage = () => {
   const userId = queryParams.get("user_id");
   console.log(queryParams)
   console.log(userId)
+  if (userId) {
+    localStorage.setItem("user_id", userId);
+  }
 
   return (
     <main className="bg-[radial-gradient(circle_at_left,_rgba(255,165,0,0.3)_0%,_white_25%)]">
@@ -29,21 +32,14 @@ const ProductsPage = () => {
           <p className="font-semibold text-lg">Turkumlar bo‘yicha</p>
           <span
             className="font-medium text-primary cursor-pointer"
-            // onClick={() => setCurrentCategory("")}
-            onClick={() => {
-              window.open("http://192.168.0.180:5173/", "_blank"); // yangi tabda ochiladi
-            }}
+            onClick={() => setCurrentCategory("")}
+          // onClick={() => {
+          //   window.open("http://192.168.0.180:5173/", "_blank"); // yangi tabda ochiladi
+          // }}
           >
             Hammasi
           </span>
         </div>
-        {/* Routelarni ko'rsatish uchun */}
-        <div className="mb-4">
-          <span className="text-gray-500 text-sm">
-            Path: {location.pathname} | Params: {userId}
-          </span>
-        </div>
-
         <CategoriesList
           categories={categories}
           currentCategory={currentCategory}

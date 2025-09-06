@@ -51,7 +51,7 @@ const CartPage = () => {
                   cart,
                   finalTotal,
                   deliveryType,
-                  customerId: "74ffb7f6-1ac8-4b29-ba5c-9517786e8532", // или динамически
+                  customerId: localStorage.getItem("user_id") || "", // или динамически
                   onSuccess: (id) => {
                     localStorage.removeItem("cart");
                     setCart([]);
