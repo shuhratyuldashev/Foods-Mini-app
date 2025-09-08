@@ -16,9 +16,8 @@ const OrderCard = ({ order, address }: OrderCardProps) => {
   return (
     <Link
       to={`/order/${order.id}`}
-      className={`flex items-center rounded-md shadow-sm shadow-slate-100 py-2 px-4 w-full ${
-        isActive ? "text-white bg-primary" : "border opacity-90 bg-white"
-      }`}
+      className={`flex items-center rounded-md shadow-sm shadow-slate-100 py-2 px-4 w-full ${isActive ? "text-white bg-primary" : "border opacity-90 bg-white"
+        }`}
     >
 
       <div className="flex items-center w-full">
@@ -27,14 +26,14 @@ const OrderCard = ({ order, address }: OrderCardProps) => {
           <p className={`font-bold text-xl ${priceColor}`}>
             {order.total_price.toLocaleString()} UZS
           </p>
-          <h3 className="font-medium truncate max-w-[200px]">
+          {/* <h3 className="font-medium truncate max-w-[200px]">
             {address || "Manzil topilmadi"}
-          </h3>
-         <ul className="mt-2">
-           {order.order_items.map((item: OrderItem) => (
+          </h3> */}
+          <ul className="mt-2">
+            {order.order_items.map((item: OrderItem) => (
               <li className="font-semibold" key={item.id}>{item.name}</li>
             ))}
-         </ul>
+          </ul>
         </div>
         <p className={`ml-auto font-semibold ${priceColor}`}>
           {getTotalQuantity()} ta

@@ -2,6 +2,7 @@ import { Drawer, DrawerContent, DrawerTrigger } from "@/shared/ui/drawer";
 import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
 import { useState } from "react";
 import "leaflet/dist/leaflet.css";
+import axios from '@/shared/axios';
 
 const ChooseLocationDrawer = () => {
   const [position, setPosition] = useState<[number, number] | null>(null);
@@ -21,19 +22,16 @@ const ChooseLocationDrawer = () => {
     e.preventDefault();
     if (!position) return alert("Iltimos, manzil tanlang!");
 
-    // backendga yuborish
     const userId = localStorage.getItem("user_id");
-    const res = await fetch(`/v1/order/customers/${userId}/`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
+    try {
+      const res = await axios.patch(`/order/customers/action/${userId}/`, {
         latitude: position[0],
         longitude: position[1],
-      }),
-    });
-
-    const data = await res.json();
-    console.log("Address API javobi:", data);
+      });
+      console.log("Address API javobi:", res.data);
+    } catch (err) {
+      console.error("Manzilni saqlashda xatolik:", err);
+    }
   };
 
   return (

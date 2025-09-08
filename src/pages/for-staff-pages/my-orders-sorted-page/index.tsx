@@ -6,6 +6,8 @@ import { Order } from "@/shared/types/types";
 const MyOrdersSortedPage = () => {
   const { type } = useParams<string>();
 
+
+
   return (
     <main className="bg-gradient-to-br p-4 min-h-screen from-white via-orange-50 to-white">
       <HeaderMyOrdersSortedPage type={`${type}`} />

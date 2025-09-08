@@ -42,7 +42,7 @@ export interface Order {
   id: string;
   customer: string;
   total_price: number;
-  status: "pending" | "preparing" | "delivered" | "cancelled"; // можешь дополнить
+  status: "pending" | "preparing" | "delivered" | "ready" | "cancelled"; // можешь дополнить
   delivery_status: "by_currier" | "self_get";
   order_date?: string;
   customer_latitude?: number;

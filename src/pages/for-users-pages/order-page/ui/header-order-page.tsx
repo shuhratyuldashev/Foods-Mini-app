@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const HeaderOrderPage = () => {
   return (
     <header className="p-4 flex items-center gap-2 bg-black">
-      <Link to="/cart">
+      <Link to="/admin/orders">
         <div className="p-2 rounded-full border border-white text-white flex itemc justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"

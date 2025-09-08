@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
+import avatar from "@/shared/assets/images/avatar-2.jpg";
+
 
 interface CustomerCardProps {
   id: number;
-  avatar: string;
-  user_name: string;
+  name: string;
   phone: string;
+  address: string;
 }
 
-const CustomerCard = ({ id, avatar, user_name, phone }: CustomerCardProps) => {
+const CustomerCard = ({ id, name, phone }: CustomerCardProps) => {
   return (
     <Link
       to={`/user/${id}`}
@@ -21,7 +23,7 @@ const CustomerCard = ({ id, avatar, user_name, phone }: CustomerCardProps) => {
         />
       </div>
       <div className="flex flex-col items-start">
-        <h2 className="font-semibold">{user_name}</h2>
+        <h2 className="font-semibold">{name}</h2>
         <p className="text-gray-500 font-bold text-sm">{phone}</p>
       </div>
     </Link>

@@ -30,15 +30,13 @@ const OrderModal = ({
 
         <button
           onClick={() => handleClick("pick up")}
-          className={`border ${
-            typePickUp === "pick up" &&
+          className={`border ${typePickUp === "pick up" &&
             "border-primary shadow-primary/25 shadow opacity-100"
-          } rounded-2xl p-4 w-full text-left`}
+            } rounded-2xl p-4 w-full text-left`}
         >
           <h1
-            className={`font-semibold ${
-              typePickUp === "pick up" && "text-primary"
-            }`}
+            className={`font-semibold ${typePickUp === "pick up" && "text-primary"
+              }`}
           >
             O‘zingiz olib ketish
           </h1>
@@ -49,15 +47,13 @@ const OrderModal = ({
 
         <button
           onClick={() => handleClick("deliver")}
-          className={`border ${
-            typePickUp === "deliver" &&
+          className={`border ${typePickUp === "deliver" &&
             "border-primary shadow-primary/25 shadow opacity-100"
-          } rounded-2xl p-4 w-full text-left`}
+            } rounded-2xl p-4 w-full text-left`}
         >
           <h1
-            className={`font-semibold ${
-              typePickUp === "deliver" && "text-primary"
-            }`}
+            className={`font-semibold ${typePickUp === "deliver" && "text-primary"
+              }`}
           >
             Kuryer orqali yetkazish
           </h1>
@@ -66,7 +62,7 @@ const OrderModal = ({
           </p>
         </button>
 
-        <button
+        {/* <button
           onClick={() => handleClick("in branch")}
           className={`border ${
             typePickUp === "in branch" &&
@@ -83,7 +79,7 @@ const OrderModal = ({
           <p className="text-gray-500 text-sm">
             Buyurtmangizni filialdan olib, bevosita joyida foydalaning.
           </p>
-        </button>
+        </button> */}
       </div>
     </Modal>
   );

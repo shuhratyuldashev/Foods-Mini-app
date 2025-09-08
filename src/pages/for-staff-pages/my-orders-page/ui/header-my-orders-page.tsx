@@ -5,7 +5,7 @@ const HeaderMyOrdersPage = () => (
     <p className="font-semibold text-lg mx-auto translate-x-[13%]">
       Mening buyurtmalarim
     </p>
-    <Link to="/notifications">
+    {/* <Link to="/notifications">
       <button className="rounded-full bg-white p-2 border flex justify-center items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,8 @@ const HeaderMyOrdersPage = () => (
           />
         </svg>
       </button>
-    </Link>
+    </Link> */}
+
   </header>
 );
 
