@@ -11,13 +11,13 @@ const MyOrdersPage = () => {
       <HeaderMyOrdersPage />
       <section className="p-4">
         <SearchBarMyOrder />
-
+        {/* 
         <TotalOrders
-          all_orders={31}
+          // all_orders={31}
           delivering_orders={8}
           canceled_orders={5}
           completed_orders={18}
-        />
+        /> */}
         {/* <div className="flex flex-col gap-3">
           {orders_list_consts.map((o) => (
             <OrderCard key={o.id} {...o} />

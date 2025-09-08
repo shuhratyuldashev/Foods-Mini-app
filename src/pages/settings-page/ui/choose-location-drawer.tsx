@@ -3,14 +3,16 @@ import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
 import { useState } from "react";
 import "leaflet/dist/leaflet.css";
 import axios from '@/shared/axios';
+import { LatLngExpression } from "leaflet";
+
 
 const ChooseLocationDrawer = () => {
   const [position, setPosition] = useState<[number, number] | null>(null);
-  const defaultCenter: [number, number] = [41.3111, 69.2797];
+  const defaultCenter: LatLngExpression = [41.3111, 69.2797]; // Tashkent
 
   function LocationMarker() {
     useMapEvents({
-      click(e) {
+      click(e: any) {
         setPosition([e.latlng.lat, e.latlng.lng]);
       },
     });

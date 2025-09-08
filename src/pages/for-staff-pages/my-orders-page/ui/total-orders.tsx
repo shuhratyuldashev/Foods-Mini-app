@@ -7,6 +7,7 @@ type Order = {
   status: string;
   order_date: string;
   order_items: { id: string; name: string; price: number; quantity: number }[];
+
 };
 
 const Tabs = ({
@@ -30,8 +31,8 @@ const Tabs = ({
           key={tab.id}
           onClick={() => setActiveTab(tab.id)}
           className={`flex-1 min-w-[120px] px-4 py-3 text-sm font-medium transition-colors ${activeTab === tab.id
-              ? "bg-[#FFF3E0] text-[#FF8C00] border-b-2 border-[#FF8C00]"
-              : "text-gray-600 hover:text-gray-800 hover:bg-gray-50"
+            ? "bg-[#FFF3E0] text-[#FF8C00] border-b-2 border-[#FF8C00]"
+            : "text-gray-600 hover:text-gray-800 hover:bg-gray-50"
             }`}
         >
           {tab.label}
