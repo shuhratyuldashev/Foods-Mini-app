@@ -1,7 +1,8 @@
 import { Order } from "@/shared/types/types";
-import { useState } from "react";
+import { use, useState } from "react";
 import axios from "@/shared/axios";
 import { toast } from 'react-toastify';
+import { userData } from "@/shared/store/user";
 
 const OrderInfo = ({ order }: { order?: Order }) => {
   const [loading, setLoading] = useState(false);
@@ -54,8 +55,7 @@ const OrderInfo = ({ order }: { order?: Order }) => {
               ? "Tayyor"
               : "Nomaʼlum"}
       </p>
-
-      {order?.status !== "ready" && (
+      {order?.status !== "ready" && userData?.type !== "user" && (
         <button
           onClick={handleConfirm}
           disabled={loading}

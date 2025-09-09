@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import { userData } from "@/shared/store/user";
 
 // Marker icon to‘g‘ri chiqishi uchun custom icon kerak bo‘ladi
 const customIcon = new L.Icon({
@@ -34,8 +35,18 @@ const MyOrderPage = () => {
 
   const handleMarkAsFinished = async () => {
     try {
-      await axios.patch(`order/update/${orderId}/`, { status: "finished" });
-      setOrder((prev: any) => ({ ...prev, status: "finished" }));
+      await axios.patch(`order/order-status/${orderId}/`, { status: "finished", worker_id: userData?.username });
+      setOrder((prev: any) => ({ ...prev, status: "finished", worker_id: userData?.username }));
+    } catch (error) {
+      console.error("Failed to update order status:", error);
+      setError("Buyurtma holatini yangilashda xatolik yuz berdi");
+    }
+  };
+
+  const handleGetOrder = async () => {
+    try {
+      await axios.patch(`order/order-status/${orderId}/`, { status: "on_way", worker_id: userData?.username });
+      setOrder((prev: any) => ({ ...prev, status: "on_way", worker_id: userData?.username }));
     } catch (error) {
       console.error("Failed to update order status:", error);
       setError("Buyurtma holatini yangilashda xatolik yuz berdi");
@@ -112,7 +123,15 @@ const MyOrderPage = () => {
 
         {/* MAP */}
         {order.lat && order.lon && (
-          <div className="mt-6 w-full h-64 rounded-lg overflow-hidden shadow">
+          <div
+            className="mt-6 w-full h-64 rounded-lg overflow-hidden shadow cursor-pointer"
+            onClick={() =>
+              window.open(
+                `https://yandex.com/maps/?rtext=~${order.lat},${order.lon}&rtt=auto`,
+                "_blank"
+              )
+            }
+          >
             <MapContainer
               center={[order.lat, order.lon]}
               zoom={15}
@@ -129,13 +148,24 @@ const MyOrderPage = () => {
           </div>
         )}
 
+        {/* BUTTONS */ 
+        order.status == 'ready' && userData?.role != "user"  ?
         <button
           className="p-4 w-full text-center mt-8 bg-primary text-white font-semibold text-sm rounded-full"
-          onClick={handleMarkAsFinished}
+          onClick={handleGetOrder}
           disabled={order.status === "finished"}
+        >
+          Buyurtmani qabul qilish
+        </button>
+        : order.status === 'on_way' && userData?.role != "user" &&        
+        <button
+        className="p-4 w-full text-center mt-8 bg-red-800 text-white font-semibold text-sm rounded-full"
+        onClick={handleMarkAsFinished}
+        disabled={order.status === "finished"}
         >
           Bajarildi deb belgilash
         </button>
+        }
       </section>
     </main>
   );

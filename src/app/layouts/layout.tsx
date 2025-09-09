@@ -1,12 +1,23 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { checkAuth } from "@/shared/api/check-auth";
+import { setUserData } from "@/shared/store/user";
+import axios from "@/shared/axios";
 
 const Layout = () => {
   const location = useLocation();
 
   useEffect(() => {
-    checkAuth();
+    (async () => {
+      const userId = localStorage.getItem("user_id");
+      if (!userId) return;
+
+      try {
+        const res = await axios.get(`/profile/users/detail/${userId}/`);
+        setUserData(res.data);
+      } catch {
+        setUserData(null);
+      }
+    })();
   }, [location.pathname]);
 
   return (
