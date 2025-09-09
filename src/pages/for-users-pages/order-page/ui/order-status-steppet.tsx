@@ -53,7 +53,7 @@ const OrderStatusStepper = ({ status, deliveryStatus }: Props) => {
           { key: "pending", label: "Kutilmoqda", icon: <PendingIcon /> },
           { key: "preparing", label: "Tayyorlanmoqda", icon: <PreparingIcon /> },
           { key: "by_currier", label: "Yetkazilmoqda", icon: <CourierIcon /> },
-          { key: "arrived", label: "Yetib bordi", icon: <CheckIcon /> },
+          { key: "finished", label: "Yetib bordi", icon: <CheckIcon /> },
         ];
 
   const currentIndex = steps.findIndex((step) => step.key === status || step.key === deliveryStatus);
