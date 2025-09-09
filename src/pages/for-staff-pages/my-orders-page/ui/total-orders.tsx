@@ -43,6 +43,7 @@ const Tabs = ({
 };
 
 const OrdersTable = ({ data }: { data: Order[] }) => {
+  console.log(data)
   return (
     <div className="overflow-x-auto my-5 bg-white rounded-md border">
       <table className="w-full">
@@ -76,7 +77,7 @@ const OrdersTable = ({ data }: { data: Order[] }) => {
               </td>
               <td className="px-6 py-4 text-sm text-[#FF8C00] font-medium">
                 <a
-                  href={`/staff/my-orders/${order.id}`}
+                  href={`/staff/my-order/${order.id}`}
                   className="hover:text-[#e67600]"
                 >
                   Ko‘rish →

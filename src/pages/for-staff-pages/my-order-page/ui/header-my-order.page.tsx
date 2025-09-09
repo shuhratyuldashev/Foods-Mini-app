@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const HeaderMyOrderPage = () => {
+  const orderId = useParams().id;
   return (
     <header className="flex items-center mt-5">
       <Link to="/staff/my-orders">
@@ -22,8 +23,11 @@ const HeaderMyOrderPage = () => {
           </svg>
         </button>
       </Link>
-      <p className="font-semibold text-sm mx-auto translate-x-[-15%] text-gray-500">
-        Buyurtma IDsi <span className="text-black">888333777</span>
+      <p className="font-semibold text-sm mx-auto  text-gray-500">
+        Buyurtma IDsi <span className="text-black">
+          {/* order id */}
+          {orderId?.split("-")[0]}
+        </span>
       </p>
     </header>
   );
