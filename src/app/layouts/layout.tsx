@@ -8,7 +8,18 @@ const Layout = () => {
 
   useEffect(() => {
     (async () => {
-      const userId = localStorage.getItem("user_id");
+      let userId = localStorage.getItem("user_id");
+
+      // Agar localStorage bo'sh bo'lsa query paramsdan olamiz
+      if (!userId) {
+        const params = new URLSearchParams(location.search);
+        userId = params.get("user_id");
+
+        if (userId) {
+          localStorage.setItem("user_id", userId);
+        }
+      }
+
       if (!userId) return;
 
       try {
@@ -18,7 +29,7 @@ const Layout = () => {
         setUserData(null);
       }
     })();
-  }, [location.pathname]);
+  }, [location.pathname, location.search]);
 
   return (
     <div>
