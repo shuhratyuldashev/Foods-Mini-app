@@ -4,7 +4,6 @@ const HeaderCustomersPage = () => {
       <p className="font-semibold">Mijozlar ro'yxati</p>
     </header>
   );
-
 };
 
 export default HeaderCustomersPage;
